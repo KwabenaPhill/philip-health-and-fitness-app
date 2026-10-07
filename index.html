@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v7.1 💪</title>
+<title>Philip Health And Fitness v7.2 💪</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#081317">
+<meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Health &amp; Fitness">
@@ -22,16 +22,17 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 :root{
-  --bg:#081317;--card:#0C171C;--card2:#162228;--border:#34454E;
-  --accent:#A9D8FF;--accent-dim:rgba(169,216,255,0.14);
-  --text:#DCEAF1;--muted:#A9BBC4;
-  --green:#B9DE9B;--green-dim:rgba(185,222,155,0.14);
-  --blue:#7FCCFF;--blue-dim:rgba(127,204,255,0.14);
-  --orange:#E8A477;
-  --red:#DE8A87;--red-dim:rgba(222,138,135,0.14);
-  --purple:#BFC2FF;--purple-dim:rgba(191,194,255,0.14);
-  --teal:#7BD6E5;--teal-dim:rgba(123,214,229,0.14);
-  --on-accent:#081317;
+  --bg:#1A100E;--card:#140C09;--card2:#27201C;--border:#4B3C35;
+  --accent:#F9D7C7;--accent-dim:rgba(249,215,199,0.14);
+  --text:#F9EBE5;--muted:#C8B9B1;
+  --green:#30D158;--green-dim:rgba(48,209,88,0.14);
+  --blue:#64D2FF;--blue-dim:rgba(100,210,255,0.14);
+  --orange:#FF9F0A;
+  --red:#FF453A;--red-dim:rgba(255,69,58,0.14);
+  --purple:#BF5AF2;--purple-dim:rgba(191,90,242,0.14);
+  --teal:#5E5CE6;--teal-dim:rgba(94,92,230,0.14);
+  --on-accent:#1A100E;
+  --status-red:#FF453A;--status-yellow:#FFD60A;--status-green:#30D158;
 }
 html{overflow-x:hidden;}
 body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;padding-bottom:82px;max-width:500px;margin:0 auto;overflow-x:hidden;}
@@ -374,7 +375,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
-/* v7.1 cool blue-charcoal visual system: reference-matched theme only */
+/* v7.2 cool blue-charcoal visual system: reference-matched theme only */
 html{background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-weight:400;}
 body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
@@ -401,6 +402,53 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .del-btn:hover{color:var(--red);border-color:var(--red);background:var(--red-dim);}
 .wk-btn.pend,.weight-add-btn,.copy-btn.go,.add-btn{border-radius:14px;}
 .wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
+
+/* v7.2 warm brown + status-led colors */
+html,body{background:var(--bg);color:var(--text);}
+.hdr{background:var(--bg);}
+.bnav{background:#271E19;border-top-color:var(--border);}
+.sec{color:var(--accent);}
+.wk-time,.wk-lbl,.today-c .dc-dd,.wlog-num,.fb-cur,.food-price{color:var(--accent);}
+.wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
+.wk-btn.pend,.add-btn,.weight-add-btn,.copy-btn.go{background:var(--accent);color:var(--on-accent);}
+input::placeholder,textarea::placeholder{color:#A7968E;}
+
+/* Status system: red = not done, yellow = in progress, green = done */
+.status-red{color:var(--status-red)!important;border-color:var(--status-red)!important;background-color:var(--red-dim)!important;}
+.status-yellow{color:var(--status-yellow)!important;border-color:var(--status-yellow)!important;background-color:rgba(255,214,10,.12)!important;}
+.status-green{color:var(--status-green)!important;border-color:var(--status-green)!important;background-color:var(--green-dim)!important;}
+.wk-card.status-red{background:var(--card)!important;}
+.wk-card.status-green{background:var(--green-dim)!important;}
+.wk-btn.status-red{background:var(--status-red)!important;color:#fff!important;}
+.wk-btn.status-yellow{background:var(--status-yellow)!important;color:#1A100E!important;}
+.wk-btn.status-green{background:var(--status-green)!important;color:#fff!important;}
+.m-card.status-red{background:rgba(255,69,58,.055)!important;}
+.m-card.status-yellow{background:rgba(255,214,10,.055)!important;}
+.m-card.status-green{background:var(--green-dim)!important;}
+.m-card.status-red .m-title,.m-card.status-red .m-num{color:var(--status-red);}
+.m-card.status-yellow .m-title,.m-card.status-yellow .m-num{color:var(--status-yellow);}
+.m-card.status-green .m-title{color:var(--status-green);}
+.m-card.status-green .m-num{color:var(--text);}
+.food-item.status-red{border-color:var(--status-red)!important;}
+.food-item.status-green{border-color:var(--status-green)!important;opacity:.82;}
+.food-item.status-red .food-check{background:var(--red-dim)!important;border-color:var(--status-red)!important;color:var(--status-red)!important;}
+.food-item.status-green .food-check{background:var(--status-green)!important;border-color:var(--status-green)!important;color:#fff!important;}
+.meal-card.status-red{border-color:var(--status-red)!important;}
+.meal-card.status-yellow{border-color:var(--status-yellow)!important;}
+.meal-card.status-green{border-color:var(--status-green)!important;}
+.meal-card.status-red .meal-log-btn{background:var(--red-dim)!important;border:1px solid var(--status-red)!important;color:var(--status-red)!important;}
+.meal-card.status-yellow .meal-log-btn,.meal-card.status-yellow .meal-log-btn.added{background:rgba(255,214,10,.14)!important;border:1px solid var(--status-yellow)!important;color:var(--status-yellow)!important;}
+.meal-card.status-green .meal-log-btn,.meal-card.status-green .meal-log-btn.added{background:var(--status-green)!important;border-color:var(--status-green)!important;color:#fff!important;}
+.tl-ate{border-color:var(--status-red);}
+.tl-ate.on{background:var(--status-green)!important;border-color:var(--status-green)!important;color:#fff!important;}
+.goal.status-red{border-color:var(--status-red)!important;}
+.goal.status-yellow{border-color:var(--status-yellow)!important;}
+.goal.status-green{border-color:var(--status-green)!important;}
+.gbar-bg{background:var(--border);}
+.fb-stat.food-status-red .fb-num{color:var(--status-red)!important;}
+.fb-stat.food-status-green .fb-num{color:var(--status-green)!important;}
+.toast{background:#201512;color:var(--text);border-color:var(--border);}
+.pop.warn{border-color:var(--status-yellow);}
 </style>
 </head>
 <body>
@@ -408,7 +456,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.1</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.2</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -670,7 +718,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.1</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.2</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -838,15 +886,20 @@ function updHdr(){
   document.getElementById('hdrStreak').textContent=calcStreak();
   const st=dayStats(n,todayKey());
   document.getElementById('hdrTasks').textContent=st.done+'/'+st.total;
+  const hp=document.querySelector('.hdr-pill');if(hp)hp.style.borderColor=progColor(st.pct);
 }
 
 // RING — 5 tasks: workout + steps + water + morning meal + evening meal (4 on rest day)
 function progColor(pct){
-  if(pct>=100)return '#30D158';
-  if(pct>=70)return '#9BE24B';
-  if(pct>=40)return '#FFD700';
-  if(pct>=1)return '#FF6B35';
-  return '#FF453A';
+  pct=Math.max(0,Math.min(100,Number(pct)||0));
+  if(pct>=100)return 'var(--status-green)';
+  if(pct>=70)return 'var(--status-green)';
+  if(pct>=40)return 'var(--status-yellow)';
+  return 'var(--status-red)';
+}
+function statusClass(pct){
+  pct=Math.max(0,Math.min(100,Number(pct)||0));
+  return pct>=100?'status-green':pct>=40?'status-yellow':'status-red';
 }
 const MR_C=226.2;
 function setRing(id,pct){const el=document.getElementById(id);if(!el)return;el.style.strokeDashoffset=MR_C-(pct/100)*MR_C;el.style.stroke=progColor(pct);}
@@ -858,22 +911,22 @@ function updRing(){
   const rp=document.getElementById('ringPct');rp.textContent=pct+'%';rp.style.color=col;
   document.getElementById('progSub').textContent=`${done} of ${total} tasks done`;
   const mb=document.getElementById('miniBars');mb.innerHTML='';
-  for(let i=0;i<total;i++){const b=document.createElement('div');b.className='mini-b'+(i<done?' done':'');if(i<done)b.style.background=col;mb.appendChild(b);}
+  for(let i=0;i<total;i++){const b=document.createElement('div');b.className='mini-b'+(i<done?' done':'');b.style.background=i<done?'var(--status-green)':'var(--status-red)';mb.appendChild(b);}
 }
 
 // TODAY WORKOUT
 function renderToday(){
   const n=new Date();const dow=n.getDay();const sc=SCHED[dow];const k=todayKey();const dd=getDD(k);
   const card=document.getElementById('wkCard');
-  card.className='wk-card'+(sc.isRest?' rest-wk':dd.wk?' done-wk':'');
+  card.className='wk-card '+(sc.isRest?'rest-wk':statusClass(dd.wk?100:0));
   const ic=document.getElementById('wkIcon');
-  ic.textContent=sc.icon;ic.style.background=sc.bg;ic.style.border=`2px solid ${sc.color}33`;
+  ic.textContent=sc.icon;ic.style.background=sc.isRest?'var(--card2)':(dd.wk?'var(--green-dim)':'var(--red-dim)');ic.style.border=`2px solid ${sc.isRest?'var(--border)':(dd.wk?'var(--status-green)':'var(--status-red)')}33`;
   document.getElementById('wkTitle').textContent=sc.lbl;
   document.getElementById('wkTime').textContent='⏰ '+sc.time;
   document.getElementById('wkDesc').textContent=sc.desc;
   const bw=document.getElementById('wkBtnWrap');
   if(sc.isRest)bw.innerHTML='<p style="font-size:13px;color:var(--muted);padding:6px 0 2px;">Rest well today. Recover strong. 💤</p>';
-  else bw.innerHTML=`<button class="wk-btn ${dd.wk?'done':'pend'}" onclick="toggleWorkout()">${dd.wk?'✓ Session Complete!':'Mark Session Done'}</button>`;
+  else bw.innerHTML=`<button class="wk-btn ${dd.wk?'done':'pend'} ${dd.wk?'status-green':'status-red'}" onclick="toggleWorkout()">${dd.wk?'✓ Session Complete!':'Mark Session Done'}</button>`;
   renderSteps(k);renderWater();renderTodayLog();if(syncMealFlags(k))save();updRing();
 }
 
@@ -887,7 +940,7 @@ function renderSteps(k){
   const dd=readDD(k);const steps=dd.steps||0;const pct=Math.min(100,Math.round(steps/STEP_GOAL*100));
   document.getElementById('stepsNum').textContent=steps.toLocaleString();
   setRing('stepsRing',pct);
-  const card=document.getElementById('stepsCard');if(card)card.className='m-card'+(steps>=STEP_GOAL?' m-done':'');
+  const card=document.getElementById('stepsCard');if(card)card.className='m-card '+statusClass(pct);
 }
 
 function addSteps(n){
@@ -939,11 +992,11 @@ function renderWeek(){
         <h4>${sc.icon} ${sc.lbl}</h4>
         <p>${subs[sc.type]||sc.time}</p>
         <div class="dc-dots">
-          <div class="mdot ${dd.m1?'meal':''}" title="Morning meal"></div>
-          <div class="mdot ${dd.m2?'meal':''}" title="Evening meal"></div>
-          ${!sc.isRest?`<div class="mdot ${dd.wk?'work':''}" title="Workout"></div>`:''}
-          <div class="mdot ${stepsHit?'step':''}" title="8k Steps"></div>
-          <div class="mdot ${waterHit?'water':''}" title="Water"></div>
+          <div class="mdot" title="Morning meal" style="background:${isFuture?'var(--border)':dd.m1?'var(--status-green)':'var(--status-red)'}"></div>
+          <div class="mdot" title="Evening meal" style="background:${isFuture?'var(--border)':dd.m2?'var(--status-green)':'var(--status-red)'}"></div>
+          ${!sc.isRest?`<div class="mdot" title="Workout" style="background:${isFuture?'var(--border)':dd.wk?'var(--status-green)':'var(--status-red)'}"></div>`:''}
+          <div class="mdot" title="8k Steps" style="background:${isFuture?'var(--border)':progColor(Math.min(100,Math.round((dd.steps||0)/STEP_GOAL*100)))}"></div>
+          <div class="mdot" title="Water" style="background:${isFuture?'var(--border)':progColor(Math.min(100,Math.round((dd.water||0)/WATER_GOAL*100)))}"></div>
         </div>
       </div>
       <div class="dc-check">✓</div>`;
@@ -967,7 +1020,7 @@ function renderWater(){
   document.getElementById('waterCount').textContent=glasses;
   const sub=document.getElementById('waterSub');if(sub)sub.textContent=glasses*250+'ml today';
   setRing('waterRing',Math.min(100,Math.round(glasses/WATER_GOAL*100)));
-  const card=document.getElementById('waterCard');if(card)card.className='m-card'+(glasses>=WATER_GOAL?' m-done':'');
+  const card=document.getElementById('waterCard');if(card)card.className='m-card '+statusClass(Math.round(glasses/WATER_GOAL*100));
 }
 function bumpWater(n){const dd=readDD(todayKey());setWater(Math.max(0,Math.min(WATER_GOAL,(dd.water||0)+n)));}
 
@@ -1097,7 +1150,10 @@ function renderGoalList(type){
       statusHTML='<span class="goal-status" style="color:var(--muted)">🔒 Day '+dayNum+' of '+totalDays+' · '+pct+'% · check on '+fmtDate(g.end)+'</span>';
       actHTML='<button class="gbtn small" onclick="beginGoalEdit(\''+type+'\')">✎</button>';
     }
-    const bar='<div class="gbar-bg"><div class="gbar-fill" style="width:'+(100-pct)+'%"></div></div>';
+    const goalLevel=today<g.start?'':statusClass(pct);
+    const goalCol=today<g.start?'var(--border)':progColor(pct);
+    if(goalLevel)cls+=' '+goalLevel;
+    const bar='<div class="gbar-bg" style="background:'+goalCol+'"><div class="gbar-fill" style="width:'+(100-pct)+'%;background:var(--card2)"></div></div>';
     card='<div class="'+cls+'"><div class="goal-top"><div class="goal-ic">📌</div>'+
       '<div class="goal-main"><div class="goal-range">'+fmtDate(g.start)+' – '+fmtDate(g.end)+'</div><div class="goal-meta">'+tgt+span+'</div></div>'+
       '<div class="goal-act">'+actHTML+'<button class="gbtn small" onclick="cancelActiveGoal(\''+type+'\')">🗑️</button></div></div>'+bar+statusHTML+'</div>';
@@ -1132,7 +1188,7 @@ function renderProgress(){
     tot+=st.total;done+=st.done;
     const fut=k>tStr;const pct=fut?0:st.pct;
     const row=document.createElement('div');row.className='bar-row';
-    row.innerHTML=`<div class="br-day">${DNAMES[dow]}</div><div class="br-track"><div class="br-fill" style="width:${100-pct}%"></div></div><div class="br-pct">${fut?'—':pct+'%'}</div>`;
+    row.innerHTML=`<div class="br-day">${DNAMES[dow]}</div><div class="br-track" style="background:${fut?'var(--border)':progColor(pct)}"><div class="br-fill" style="width:${100-pct}%"></div></div><div class="br-pct">${fut?'—':pct+'%'}</div>`;
     cont.appendChild(row);
   });
   const str=calcStreak();
@@ -1210,7 +1266,7 @@ function renderFood(){
           '<select class="add-inp fa-cat" id="efCat">'+CAT_ORDER.map(c=>'<option value="'+c+'"'+(x.cat===c?' selected':'')+'>'+c+'</option>').join('')+'</select>'+
           '<div class="meal-edit-btns"><button class="meal-save" onclick="saveFoodEdit(\''+x.id+'\')">Save</button><button class="meal-cancel" onclick="cancelFoodEdit()">Cancel</button></div>';
       }else{
-        row.className='food-item'+(x.bought?' bought':'');
+        row.className='food-item '+(x.bought?'bought status-green':'status-red');
         row.innerHTML='<div class="food-check" onclick="toggleFood(\''+x.id+'\')">'+(x.bought?'✓':'')+'</div>'+
           '<div class="food-info" onclick="toggleFood(\''+x.id+'\')"><div class="food-name">'+esc(x.name)+'</div>'+
           (x.qty?'<div class="food-qty">'+esc(x.qty)+'</div>':'')+'</div>'+
@@ -1225,13 +1281,17 @@ function renderFood(){
   document.getElementById('fbTotal').textContent='₵'+total;
   document.getElementById('fbBought').textContent='₵'+bought;
   document.getElementById('fbLeft').textContent='₵'+left;
+  const fbBoughtEl=document.getElementById('fbBought')?.parentElement;
+  const fbLeftEl=document.getElementById('fbLeft')?.parentElement;
+  if(fbBoughtEl)fbBoughtEl.className='fb-stat '+(bought>0?'food-status-green':'food-status-red');
+  if(fbLeftEl)fbLeftEl.className='fb-stat '+(left>0?'food-status-red':'food-status-green');
   const inp=document.getElementById('fbBudgetInp');if(document.activeElement!==inp)inp.value=budget||'';
   const bar=document.getElementById('fbBarFill');
-  const pct=budget>0?Math.min(total/budget*100,100):0;bar.style.width=(100-pct)+'%';
+  const pct=budget>0?Math.min(total/budget*100,100):0;bar.style.width=(100-pct)+'%';bar.style.background=progColor(100-pct);
   const note=document.getElementById('fbNote');
   if(budget>0){
-    if(total>budget){bar.classList.add('over');note.innerHTML='<span style="color:var(--red);font-weight:700">Over budget by ₵'+(total-budget)+'</span> — trim a few items';}
-    else{bar.classList.remove('over');note.textContent='₵'+(budget-total)+' under your budget 👍';}
+    if(total>budget){bar.classList.add('over');note.innerHTML='<span style="color:var(--status-red);font-weight:700">Over budget by ₵'+(total-budget)+'</span> — trim a few items';}
+    else{bar.classList.remove('over');note.innerHTML='<span style="color:'+progColor(100-pct)+';font-weight:700">₵'+(budget-total)+' under your budget</span> 👍';}
   }else{bar.classList.remove('over');note.textContent='Set your monthly budget above';}
   refreshListPreview();
   renderFoodHistory();
@@ -1385,7 +1445,10 @@ function renderMeals(){
     const meals=D.meals.filter(m=>m.group===g);
     if(!meals.length){const e=document.createElement('div');e.className='meal-empty';e.textContent='No meals yet — add one below.';cont.appendChild(e);return;}
     meals.forEach(m=>{
-      const card=document.createElement('div');card.className='meal-card';
+      const card=document.createElement('div');
+      const planned=!!planHas(m), plannedEntry=planned?D.mealPlan.find(p=>p.mealId===m.id||((p.group===m.group)&&p.name.toLowerCase()===m.name.toLowerCase())):null;
+      const eaten=!!(plannedEntry&&isEaten(plannedEntry.pid));
+      card.className='meal-card '+(eaten?'status-green':planned?'status-yellow':'status-red');
       if(editingMealId===m.id){
         card.innerHTML='<div class="meal-edit">'+
           '<input class="add-inp" id="editMealName" value="'+esc(m.name)+'">'+
@@ -1543,7 +1606,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v7.1: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.2: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
