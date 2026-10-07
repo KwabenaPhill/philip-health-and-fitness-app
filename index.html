@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v6.9 💪</title>
+<title>Philip Health And Fitness v7.0 💪</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Health &amp; Fitness">
@@ -22,16 +22,16 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 :root{
-  --bg:#000000;--card:#161616;--card2:#1E1E1E;--border:#333333;
-  --accent:#FF9F0A;--accent-dim:rgba(255,159,10,0.15);
-  --text:#ffffff;--muted:#C9C9C9;
-  --green:#30D158;--green-dim:rgba(48,209,88,0.15);
-  --blue:#32ADE6;--blue-dim:rgba(50,173,230,0.15);
-  --orange:#FF6B35;
-  --red:#FF453A;--red-dim:rgba(255,69,58,0.15);
-  --purple:#BF5AF2;--purple-dim:rgba(191,90,242,0.15);
-  --teal:#5E5CE6;--teal-dim:rgba(94,92,230,0.15);
-  --on-accent:#000000;
+  --bg:#1A100E;--card:#140C09;--card2:#27201C;--border:#4B3C35;
+  --accent:#F9D7C7;--accent-dim:rgba(249,215,199,0.14);
+  --text:#F9EBE5;--muted:#C8B9B1;
+  --green:#B7CF91;--green-dim:rgba(183,207,145,0.14);
+  --blue:#B8A5A0;--blue-dim:rgba(184,165,160,0.14);
+  --orange:#C58B6E;
+  --red:#D78F7D;--red-dim:rgba(215,143,125,0.14);
+  --purple:#C6A78C;--purple-dim:rgba(198,167,140,0.14);
+  --teal:#A88E82;--teal-dim:rgba(168,142,130,0.14);
+  --on-accent:#1A100E;
 }
 html{overflow-x:hidden;}
 body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;padding-bottom:82px;max-width:500px;margin:0 auto;overflow-x:hidden;}
@@ -374,6 +374,31 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
+/* v7.0 warm brown visual system: reference-matched theme only */
+html{background:var(--bg);}
+body{background:var(--bg);color:var(--text);font-weight:400;}
+body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
+input::placeholder,textarea::placeholder{color:#A7968E;opacity:1;}
+.hdr{background:var(--bg);border-bottom-color:var(--border);}
+.bnav{background:#271E19;border-top-color:var(--border);}
+.ni{color:var(--muted);}
+.ni.active{color:var(--accent);}
+.ni.active .ni-dot{background:var(--accent);}
+.sec{color:var(--accent);letter-spacing:3px;}
+.wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item{box-shadow:none;}
+.wk-time,.wk-lbl,.today-c .dc-dd,.wlog-num,.fb-cur,.food-price{color:var(--accent);}
+.wk-btn.pend,.add-btn,.weight-add-btn,.copy-btn.go{background:var(--accent);color:var(--on-accent);}
+.wk-btn.done{background:var(--green-dim);border-color:var(--green);color:var(--green);}
+.add-inp,.weight-inp,.wstat,.copy-prev,.fb-budget-edit,.food-check{background:var(--card2);border-color:var(--border);color:var(--text);}
+.add-inp:focus,.weight-inp:focus{border-color:var(--accent);}
+.wk-nav-btn,.st-btn:active,.copy-btn.preview{background:var(--card2);}
+.day-card.today-c{border-color:var(--accent);background:var(--accent-dim);}
+.food-item.bought .food-check,.done-card .dc-check{background:var(--green);border-color:var(--green);color:var(--on-accent);}
+.br-track,.fb-bar{background:linear-gradient(90deg,#765649 0%,#9B7564 48%,#E1C58F 100%);}
+.br-fill,.fb-bar-fill{background:var(--card2);}
+.st-btn.danger{color:var(--red);}
+.st-btn.success{color:var(--green);}
+.del-btn:hover{color:var(--red);border-color:var(--red);background:var(--red-dim);}
 </style>
 </head>
 <body>
@@ -381,7 +406,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v6.9</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.0</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -643,7 +668,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v6.9</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.0</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -1516,7 +1541,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v6.9: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.0: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
@@ -1525,7 +1550,7 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
     e.preventDefault();deferred=e;
     if(standalone||document.getElementById('hfInstallBtn'))return;
     var b=document.createElement('button');b.id='hfInstallBtn';b.type='button';b.textContent='\u2B07 Install Health & Fitness';
-    b.style.cssText='position:fixed;right:14px;bottom:96px;z-index:9999;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:11px 16px;background:#FF9F0A;color:#000;font:800 13px system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.45)';
+    b.style.cssText='position:fixed;right:14px;bottom:96px;z-index:9999;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:11px 16px;background:var(--accent);color:var(--on-accent);font:800 13px system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.45)';
     b.addEventListener('click',function(){if(!deferred)return;deferred.prompt();deferred.userChoice.then(function(){deferred=null;b.remove();});});
     document.body.appendChild(b);
   });
