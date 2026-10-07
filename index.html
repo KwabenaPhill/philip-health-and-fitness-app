@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v7.3 💪</title>
+<title>Philip Health And Fitness v7.4 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -194,8 +194,8 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .fb-budget-edit{display:flex;align-items:center;gap:3px;background:var(--card2);border:1.5px solid var(--border);border-radius:10px;padding:6px 12px;}
 .fb-cur{color:var(--accent);font-weight:800;font-size:14px;}
 .fb-budget-inp{background:none;border:none;color:var(--text);font-size:15px;font-weight:800;width:64px;outline:none;font-family:'Outfit',sans-serif;}
-.fb-bar{position:relative;height:8px;background:linear-gradient(90deg,#30D158 0%,#9BE24B 45%,#FFD700 70%,#FF6B35 88%,#FF453A 100%);border-radius:5px;overflow:hidden;margin-bottom:8px;}
-.fb-bar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s;}
+.fb-bar{position:relative;height:8px;background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);border-radius:5px;overflow:hidden;margin-bottom:8px;}
+.fb-bar-fill{position:absolute;top:-2px;bottom:-2px;width:3px;background:var(--accent);border-radius:3px;transition:left .5s;}
 .fb-note{font-size:11px;color:var(--muted);text-align:center;}
 .copy-card{background:var(--card);border-radius:18px;padding:14px;border:1px solid var(--border);}
 .copy-btns{display:flex;gap:8px;}
@@ -296,7 +296,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .hdr-eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
 .hdr-title{font-size:27px;font-weight:800;letter-spacing:-.3px;line-height:1.1;color:var(--text);margin-top:1px;white-space:normal;text-overflow:clip;}
 .hdr-ver{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0;}
-.hdr-pill{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid rgba(245,166,35,.5);border-radius:14px;padding:9px 10px;background:var(--card);}
+.hdr-pill{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--border);border-radius:14px;padding:9px 10px;background:var(--card2);}
 .hp-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text);white-space:nowrap;}
 .hp-item b{font-weight:800;}
 .hp-ic{font-size:12px;line-height:1;}
@@ -375,7 +375,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
-/* v7.3 cool blue-charcoal visual system: reference-matched theme only */
+/* v7.4 cool blue-charcoal visual system: reference-matched theme only */
 html{background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-weight:400;}
 body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
@@ -403,7 +403,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .wk-btn.pend,.weight-add-btn,.copy-btn.go,.add-btn{border-radius:14px;}
 .wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
 
-/* v7.3 warm brown + status-led colors */
+/* v7.4 warm brown + status-led colors */
 html,body{background:var(--bg);color:var(--text);}
 .hdr{background:var(--bg);}
 .bnav{background:#271E19;border-top-color:var(--border);}
@@ -450,7 +450,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .toast{background:#201512;color:var(--text);border-color:var(--border);}
 .pop.warn{border-color:var(--status-yellow);}
 
-/* v7.3: brown base, status colors only on tracking/progress */
+/* v7.4: brown base, status colors only on tracking/progress */
 .status-red,.status-yellow,.status-green{box-shadow:none;}
 
 /* Status classes stay neutral when they are attached to containers. */
@@ -515,7 +515,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.3</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.4</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -777,7 +777,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.3</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.4</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -945,7 +945,6 @@ function updHdr(){
   document.getElementById('hdrStreak').textContent=calcStreak();
   const st=dayStats(n,todayKey());
   document.getElementById('hdrTasks').textContent=st.done+'/'+st.total;
-  const hp=document.querySelector('.hdr-pill');if(hp)hp.style.borderColor=progColor(st.pct);
 }
 
 // RING — 5 tasks: workout + steps + water + morning meal + evening meal (4 on rest day)
@@ -1346,11 +1345,13 @@ function renderFood(){
   if(fbLeftEl)fbLeftEl.className='fb-stat '+(left>0?'food-status-red':'food-status-green');
   const inp=document.getElementById('fbBudgetInp');if(document.activeElement!==inp)inp.value=budget||'';
   const bar=document.getElementById('fbBarFill');
-  const pct=budget>0?Math.min(total/budget*100,100):0;bar.style.width=(100-pct)+'%';bar.style.background=progColor(100-pct);
+  const pct=budget>0?Math.min(total/budget*100,100):0;
+  const healthPct=budget>0?Math.max(0,Math.min(100,Math.round((budget-total)/budget*100))):0;
+  if(budget>0){bar.style.display='block';bar.style.left=healthPct+'%';}else{bar.style.display='none';}bar.style.background=progColor(100-pct);
   const note=document.getElementById('fbNote');
   if(budget>0){
     if(total>budget){bar.classList.add('over');note.innerHTML='<span style="color:var(--status-red);font-weight:700">Over budget by ₵'+(total-budget)+'</span> — trim a few items';}
-    else{bar.classList.remove('over');note.innerHTML='<span style="color:'+progColor(100-pct)+';font-weight:700">₵'+(budget-total)+' under your budget</span> 👍';}
+    else{bar.classList.remove('over');note.innerHTML='<span style="color:'+progColor(healthPct)+';font-weight:700">₵'+(budget-total)+' under your budget</span> 👍';}
   }else{bar.classList.remove('over');note.textContent='Set your monthly budget above';}
   refreshListPreview();
   renderFoodHistory();
@@ -1665,7 +1666,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v7.3: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.4: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
