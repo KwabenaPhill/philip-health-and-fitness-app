@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v7.4 💪</title>
+<title>Philip Health And Fitness v7.5 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -375,7 +375,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
-/* v7.4 cool blue-charcoal visual system: reference-matched theme only */
+/* v7.5 cool blue-charcoal visual system: reference-matched theme only */
 html{background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-weight:400;}
 body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
@@ -395,7 +395,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .wk-nav-btn,.st-btn:active,.copy-btn.preview{background:var(--card2);}
 .day-card.today-c{border-color:var(--accent);background:var(--accent-dim);}
 .food-item.bought .food-check,.done-card .dc-check{background:var(--green);border-color:var(--green);color:var(--on-accent);}
-.br-track,.fb-bar{background:linear-gradient(90deg,#456477 0%,#7094A9 48%,#C7DFFF 100%);}
+.br-track{background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);}.fb-bar{background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);}
 .br-fill,.fb-bar-fill{background:var(--card2);}
 .st-btn.danger{color:var(--red);}
 .st-btn.success{color:var(--green);}
@@ -403,7 +403,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .wk-btn.pend,.weight-add-btn,.copy-btn.go,.add-btn{border-radius:14px;}
 .wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
 
-/* v7.4 warm brown + status-led colors */
+/* v7.5 warm brown + status-led colors */
 html,body{background:var(--bg);color:var(--text);}
 .hdr{background:var(--bg);}
 .bnav{background:#271E19;border-top-color:var(--border);}
@@ -450,7 +450,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .toast{background:#201512;color:var(--text);border-color:var(--border);}
 .pop.warn{border-color:var(--status-yellow);}
 
-/* v7.4: brown base, status colors only on tracking/progress */
+/* v7.5: brown base, status colors only on tracking/progress */
 .status-red,.status-yellow,.status-green{box-shadow:none;}
 
 /* Status classes stay neutral when they are attached to containers. */
@@ -515,7 +515,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.4</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.5</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -777,7 +777,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.4</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.5</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -1666,7 +1666,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v7.4: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.5: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
