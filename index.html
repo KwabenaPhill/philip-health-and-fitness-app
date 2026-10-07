@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v7.8 💪</title>
+<title>Philip Health And Fitness v7.9 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -375,7 +375,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
-/* v7.8 cool blue-charcoal visual system: reference-matched theme only */
+/* v7.9 cool blue-charcoal visual system: reference-matched theme only */
 html{background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-weight:400;}
 body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
@@ -405,7 +405,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .wk-btn.pend,.weight-add-btn,.copy-btn.go,.add-btn{border-radius:14px;}
 .wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
 
-/* v7.8 warm brown + status-led colors */
+/* v7.9 warm brown + status-led colors */
 html,body{background:var(--bg);color:var(--text);}
 .hdr{background:var(--bg);}
 .bnav{background:#271E19;border-top-color:var(--border);}
@@ -452,7 +452,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .toast{background:#201512;color:var(--text);border-color:var(--border);}
 .pop.warn{border-color:var(--status-yellow);}
 
-/* v7.8: brown base, status colors only on tracking/progress */
+/* v7.9: brown base, status colors only on tracking/progress */
 .status-red,.status-yellow,.status-green{box-shadow:none;}
 
 /* Status classes stay neutral when they are attached to containers. */
@@ -511,7 +511,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
 /* Settings/schedule is not a progress surface, so keep it neutral. */
 
-/* v7.8: brown theme everywhere except true progress trackers */
+/* v7.9: brown theme everywhere except true progress trackers */
 .wk-btn.done,.wk-btn.status-green,.wk-btn.status-red,.wk-btn.status-yellow,
 .meal-log-btn,.meal-log-btn.added,
 .food-item.status-red,.food-item.status-green,
@@ -527,7 +527,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .wk-card.status-green,.wk-card.status-red{background:var(--card)!important;}
 .fb-bar{background:var(--card2)!important;}
 
-/* v7.8: strict brown/cream UI; status colors only on tracking indicators */
+/* v7.9: strict brown/cream UI; status colors only on tracking indicators */
 .hdr-pill{background:var(--card2)!important;border-color:var(--border)!important;}
 .wk-btn.done,.wk-btn.status-red,.wk-btn.status-yellow,.wk-btn.status-green{background:var(--accent)!important;color:var(--on-accent)!important;border-color:var(--accent)!important;}
 .meal-save,.meal-shop-btn,.add-btn,.weight-add-btn,.copy-btn.go,.m-go,.m-pm.plus,.gbtn.mark,.ge-save{background:var(--accent)!important;color:var(--on-accent)!important;border-color:var(--accent)!important;}
@@ -551,6 +551,30 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .toast,.pop{background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important;}
 .pop-ic,.pop.warn .pop-ic,.st-btn.danger,.st-btn.success{color:var(--text)!important;}
 :root{--blue:var(--accent);--orange:var(--accent);--purple:var(--accent);--teal:var(--accent);}
+/* v7.9 approved small fixes */
+.mini-b{background:var(--border)!important;}
+.mini-b.done{background:var(--status-green)!important;}
+
+.gdot.filled{background:#64D2FF!important;border-color:#64D2FF!important;}
+#waterRing{stroke:#64D2FF!important;}
+
+#weightLogList .wlog-num{color:var(--status-green)!important;}
+
+.meal-log-btn,.meal-log-btn.added{
+  background:var(--card2)!important;
+  color:var(--text)!important;
+  border:1px solid var(--border)!important;
+}
+.meal-log-btn:active{background:var(--card2)!important;color:var(--text)!important;}
+
+.st-btn{background:var(--card2)!important;color:var(--text)!important;}
+.st-btn.success{background:var(--card2)!important;color:var(--text)!important;}
+.st-btn.danger{
+  background:var(--status-red)!important;
+  color:#fff!important;
+  border-color:var(--status-red)!important;
+}
+.st-btn.danger:active{background:var(--status-red)!important;color:#fff!important;}
 </style>
 </head>
 <body>
@@ -558,7 +582,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.8</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.9</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -820,7 +844,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.8</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.9</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -1018,7 +1042,7 @@ function updRing(){
   const rp=document.getElementById('ringPct');rp.textContent=pct+'%';rp.style.color=col;
   document.getElementById('progSub').textContent=`${done} of ${total} tasks done`;
   const mb=document.getElementById('miniBars');mb.innerHTML='';
-  for(let i=0;i<total;i++){const b=document.createElement('div');b.className='mini-b'+(i<done?' done':'');b.style.background=i<done?'var(--status-green)':'var(--status-red)';mb.appendChild(b);}
+  for(let i=0;i<total;i++){const b=document.createElement('div');b.className='mini-b'+(i<done?' done':'');mb.appendChild(b);}
 }
 
 // TODAY WORKOUT
@@ -1099,11 +1123,11 @@ function renderWeek(){
         <h4>${sc.icon} ${sc.lbl}</h4>
         <p>${subs[sc.type]||sc.time}</p>
         <div class="dc-dots">
-          <div class="mdot" title="Morning meal" style="background:${isFuture?'var(--border)':dd.m1?'var(--status-green)':'var(--status-red)'}"></div>
-          <div class="mdot" title="Evening meal" style="background:${isFuture?'var(--border)':dd.m2?'var(--status-green)':'var(--status-red)'}"></div>
-          ${!sc.isRest?`<div class="mdot" title="Workout" style="background:${isFuture?'var(--border)':dd.wk?'var(--status-green)':'var(--status-red)'}"></div>`:''}
-          <div class="mdot" title="8k Steps" style="background:${isFuture?'var(--border)':progColor(Math.min(100,Math.round((dd.steps||0)/STEP_GOAL*100)))}"></div>
-          <div class="mdot" title="Water" style="background:${isFuture?'var(--border)':progColor(Math.min(100,Math.round((dd.water||0)/WATER_GOAL*100)))}"></div>
+          <div class="mdot" title="Morning meal" style="background:${isFuture?'var(--border)':dd.m1?'var(--status-green)':'var(--border)'}"></div>
+          <div class="mdot" title="Evening meal" style="background:${isFuture?'var(--border)':dd.m2?'var(--status-green)':'var(--border)'}"></div>
+          ${!sc.isRest?`<div class="mdot" title="Workout" style="background:${isFuture?'var(--border)':dd.wk?'var(--status-green)':'var(--border)'}"></div>`:''}
+          <div class="mdot" title="8k Steps" style="background:${isFuture?'var(--border)':stepsHit?'var(--status-green)':'var(--border)'}"></div>
+          <div class="mdot" title="Water" style="background:${isFuture?'var(--border)':waterHit?'#64D2FF':'var(--border)'}"></div>
         </div>
       </div>
       <div class="dc-check">✓</div>`;
@@ -1175,7 +1199,7 @@ function renderWeight(){
     const prev=D.weights[i+1];
     let diffHTML='';
     if(prev){const diff=parseFloat((w.val-prev.val).toFixed(1));const cls=diff<0?'loss':'gain';const sign=diff>0?'+':'';if(diff!==0)diffHTML=`<span class="wlog-diff ${cls}">${sign}${diff}kg</span>`;}
-    return`<div class="wlog-item"><div class="wlog-num">${w.val}kg</div><div class="wlog-date">📅 ${w.date}</div>${diffHTML}<button class="wlog-del del-btn" onclick="delWeight(${i})">🗑️</button></div>`;
+    return`<div class="wlog-item recorded-weight"><div class="wlog-num">${w.val}kg</div><div class="wlog-date">📅 ${w.date}</div>${diffHTML}<button class="wlog-del del-btn" onclick="delWeight(${i})">🗑️</button></div>`;
   }).join('');
 }
 
@@ -1723,7 +1747,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v7.8: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.9: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
