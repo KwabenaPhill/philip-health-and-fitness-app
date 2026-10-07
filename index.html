@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v7.6 💪</title>
+<title>Philip Health And Fitness v7.7 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -375,7 +375,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
-/* v7.6 cool blue-charcoal visual system: reference-matched theme only */
+/* v7.7 cool blue-charcoal visual system: reference-matched theme only */
 html{background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-weight:400;}
 body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
@@ -405,7 +405,7 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .wk-btn.pend,.weight-add-btn,.copy-btn.go,.add-btn{border-radius:14px;}
 .wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
 
-/* v7.6 warm brown + status-led colors */
+/* v7.7 warm brown + status-led colors */
 html,body{background:var(--bg);color:var(--text);}
 .hdr{background:var(--bg);}
 .bnav{background:#271E19;border-top-color:var(--border);}
@@ -452,7 +452,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .toast{background:#201512;color:var(--text);border-color:var(--border);}
 .pop.warn{border-color:var(--status-yellow);}
 
-/* v7.6: brown base, status colors only on tracking/progress */
+/* v7.7: brown base, status colors only on tracking/progress */
 .status-red,.status-yellow,.status-green{box-shadow:none;}
 
 /* Status classes stay neutral when they are attached to containers. */
@@ -511,7 +511,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
 /* Settings/schedule is not a progress surface, so keep it neutral. */
 
-/* v7.6: brown theme everywhere except true progress trackers */
+/* v7.7: brown theme everywhere except true progress trackers */
 .wk-btn.done,.wk-btn.status-green,.wk-btn.status-red,.wk-btn.status-yellow,
 .meal-log-btn,.meal-log-btn.added,
 .food-item.status-red,.food-item.status-green,
@@ -527,6 +527,30 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .wk-card.status-green,.wk-card.status-red{background:var(--card)!important;}
 .fb-bar{background:var(--card2)!important;}
 
+/* v7.7: strict brown/cream UI; status colors only on tracking indicators */
+.hdr-pill{background:var(--card2)!important;border-color:var(--border)!important;}
+.wk-btn.done,.wk-btn.status-red,.wk-btn.status-yellow,.wk-btn.status-green{background:var(--accent)!important;color:var(--on-accent)!important;border-color:var(--accent)!important;}
+.meal-save,.meal-shop-btn,.add-btn,.weight-add-btn,.copy-btn.go,.m-go,.m-pm.plus,.gbtn.mark,.ge-save{background:var(--accent)!important;color:var(--on-accent)!important;border-color:var(--accent)!important;}
+.st-btn.danger,.st-btn.success,.meal-del-btn,.tl-x,.del-btn:hover,.fh-del{background:var(--card2)!important;color:var(--text)!important;border-color:var(--border)!important;}
+.wk-card.done-wk,.day-card.done-card,.goal.done,.m-card.m-done,.meal-card.status-red,.meal-card.status-yellow,.meal-card.status-green,.food-item.status-red,.food-item.status-green,.m-card.status-red,.m-card.status-yellow,.m-card.status-green,.goal.status-red,.goal.status-yellow,.goal.status-green{background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important;opacity:1!important;}
+.food-item.status-red .food-check{background:var(--red-dim)!important;color:var(--status-red)!important;border-color:var(--status-red)!important;}
+.food-item.status-green .food-check{background:var(--status-green)!important;color:#fff!important;border-color:var(--status-green)!important;}
+.meal-card.status-red .meal-log-btn{background:var(--red-dim)!important;color:var(--status-red)!important;border-color:var(--status-red)!important;}
+.meal-card.status-yellow .meal-log-btn{background:rgba(255,214,10,.14)!important;color:var(--status-yellow)!important;border-color:var(--status-yellow)!important;}
+.meal-card.status-green .meal-log-btn{background:var(--status-green)!important;color:#fff!important;border-color:var(--status-green)!important;}
+.day-card.done-card .dc-check{background:var(--status-green)!important;color:#fff!important;border-color:var(--status-green)!important;}
+.goal.status-red .gbar-bg{background:var(--status-red)!important;}
+.goal.status-yellow .gbar-bg{background:var(--status-yellow)!important;}
+.goal.status-green .gbar-bg{background:var(--status-green)!important;}
+.gdot.filled{background:var(--status-green)!important;border-color:var(--status-green)!important;}
+.wlog-diff.loss{color:var(--status-green)!important;}
+.wlog-diff.gain{color:var(--status-red)!important;}
+.fh-total{color:var(--accent)!important;}
+.m-card.status-red .m-title,.m-card.status-yellow .m-title,.m-card.status-green .m-title,.m-card.status-red .m-num,.m-card.status-yellow .m-num,.m-card.status-green .m-num{color:var(--text)!important;}
+.meal-edit-btn{background:var(--card2)!important;color:var(--text)!important;border-color:var(--border)!important;}
+.toast,.pop{background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important;}
+.pop-ic,.pop.warn .pop-ic,.st-btn.danger,.st-btn.success{color:var(--text)!important;}
+:root{--blue:var(--accent);--orange:var(--accent);--purple:var(--accent);--teal:var(--accent);}
 </style>
 </head>
 <body>
@@ -534,7 +558,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.6</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.7</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -796,7 +820,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.6</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.7</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -1699,7 +1723,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v7.6: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.7: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
