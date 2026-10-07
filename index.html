@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v7.5 💪</title>
+<title>Philip Health And Fitness v7.6 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -194,8 +194,8 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .fb-budget-edit{display:flex;align-items:center;gap:3px;background:var(--card2);border:1.5px solid var(--border);border-radius:10px;padding:6px 12px;}
 .fb-cur{color:var(--accent);font-weight:800;font-size:14px;}
 .fb-budget-inp{background:none;border:none;color:var(--text);font-size:15px;font-weight:800;width:64px;outline:none;font-family:'Outfit',sans-serif;}
-.fb-bar{position:relative;height:8px;background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);border-radius:5px;overflow:hidden;margin-bottom:8px;}
-.fb-bar-fill{position:absolute;top:-2px;bottom:-2px;width:3px;background:var(--accent);border-radius:3px;transition:left .5s;}
+.fb-bar{position:relative;height:8px;background:var(--card2);border-radius:5px;overflow:hidden;margin-bottom:8px;}
+.fb-bar-fill{position:absolute;top:-2px;bottom:-2px;width:3px;background:var(--accent);border-radius:3px;transition:left .5s;box-shadow:0 0 0 1px rgba(255,255,255,.08);}
 .fb-note{font-size:11px;color:var(--muted);text-align:center;}
 .copy-card{background:var(--card);border-radius:18px;padding:14px;border:1px solid var(--border);}
 .copy-btns{display:flex;gap:8px;}
@@ -375,7 +375,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-
 .gbar-fill{position:absolute;right:0;top:0;bottom:0;background:var(--card2);transition:width .5s cubic-bezier(.4,0,.2,1);}
 .goal-count{margin-top:10px;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:14px;font-size:13px;font-weight:700;color:var(--muted);}
 .goal-count b{color:var(--green);font-size:16px;}
-/* v7.5 cool blue-charcoal visual system: reference-matched theme only */
+/* v7.6 cool blue-charcoal visual system: reference-matched theme only */
 html{background:var(--bg);}
 body{background:var(--bg);color:var(--text);font-weight:400;}
 body,button,input,textarea,select{font-family:'Outfit',sans-serif;}
@@ -395,15 +395,17 @@ input::placeholder,textarea::placeholder{color:#81949E;opacity:1;}
 .wk-nav-btn,.st-btn:active,.copy-btn.preview{background:var(--card2);}
 .day-card.today-c{border-color:var(--accent);background:var(--accent-dim);}
 .food-item.bought .food-check,.done-card .dc-check{background:var(--green);border-color:var(--green);color:var(--on-accent);}
-.br-track{background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);}.fb-bar{background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);}
-.br-fill,.fb-bar-fill{background:var(--card2);}
+.br-track{background:linear-gradient(90deg,var(--status-red) 0%,var(--status-yellow) 50%,var(--status-green) 100%);}
+ .fb-bar{background:var(--card2);}
+.br-fill{background:var(--card2);}
+.fb-bar-fill{position:absolute;left:0!important;top:0;bottom:0;width:0;background:var(--status-green);border-radius:5px;transition:width .5s ease,background .35s ease;box-shadow:none;}
 .st-btn.danger{color:var(--red);}
 .st-btn.success{color:var(--green);}
 .del-btn:hover{color:var(--red);border-color:var(--red);background:var(--red-dim);}
 .wk-btn.pend,.weight-add-btn,.copy-btn.go,.add-btn{border-radius:14px;}
 .wk-card,.weight-card,.stat-card,.pg-bars,.edit-block,.st-block,.food-budget-card,.copy-card,.food-item,.prog-wrap{border-color:var(--border);}
 
-/* v7.5 warm brown + status-led colors */
+/* v7.6 warm brown + status-led colors */
 html,body{background:var(--bg);color:var(--text);}
 .hdr{background:var(--bg);}
 .bnav{background:#271E19;border-top-color:var(--border);}
@@ -450,7 +452,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .toast{background:#201512;color:var(--text);border-color:var(--border);}
 .pop.warn{border-color:var(--status-yellow);}
 
-/* v7.5: brown base, status colors only on tracking/progress */
+/* v7.6: brown base, status colors only on tracking/progress */
 .status-red,.status-yellow,.status-green{box-shadow:none;}
 
 /* Status classes stay neutral when they are attached to containers. */
@@ -508,6 +510,23 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .br-track{background:var(--border);}
 
 /* Settings/schedule is not a progress surface, so keep it neutral. */
+
+/* v7.6: brown theme everywhere except true progress trackers */
+.wk-btn.done,.wk-btn.status-green,.wk-btn.status-red,.wk-btn.status-yellow,
+.meal-log-btn,.meal-log-btn.added,
+.food-item.status-red,.food-item.status-green,
+.food-item.status-red .food-check,.food-item.status-green .food-check,
+.meal-card.status-red,.meal-card.status-yellow,.meal-card.status-green,
+.m-card.status-red,.m-card.status-yellow,.m-card.status-green,
+.day-card.done-card,.goal.status-red,.goal.status-yellow,.goal.status-green{
+  background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important;box-shadow:none!important;opacity:1!important;
+}
+.food-item.status-red .food-check,.food-item.status-green .food-check{
+  background:var(--card2)!important;color:var(--text)!important;border-color:var(--border)!important;
+}
+.wk-card.status-green,.wk-card.status-red{background:var(--card)!important;}
+.fb-bar{background:var(--card2)!important;}
+
 </style>
 </head>
 <body>
@@ -515,7 +534,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.5</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v7.6</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -777,7 +796,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.5</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v7.6</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -958,6 +977,12 @@ function progColor(pct){
 function statusClass(pct){
   pct=Math.max(0,Math.min(100,Number(pct)||0));
   return pct>=100?'status-green':pct>=40?'status-yellow':'status-red';
+}
+function budgetColor(pct){
+  pct=Math.max(0,Math.min(100,Number(pct)||0));
+  if(pct>=80)return 'var(--status-red)';
+  if(pct>=50)return 'var(--status-yellow)';
+  return 'var(--status-green)';
 }
 const MR_C=226.2;
 function setRing(id,pct){const el=document.getElementById(id);if(!el)return;el.style.strokeDashoffset=MR_C-(pct/100)*MR_C;el.style.stroke=progColor(pct);}
@@ -1347,7 +1372,15 @@ function renderFood(){
   const bar=document.getElementById('fbBarFill');
   const pct=budget>0?Math.min(total/budget*100,100):0;
   const healthPct=budget>0?Math.max(0,Math.min(100,Math.round((budget-total)/budget*100))):0;
-  if(budget>0){bar.style.display='block';bar.style.left=healthPct+'%';}else{bar.style.display='none';}bar.style.background=progColor(100-pct);
+  if(budget>0){
+    bar.style.display='block';
+    bar.style.left='0';
+    bar.style.width=pct+'%';
+    bar.style.background=budgetColor(pct);
+  }else{
+    bar.style.display='none';
+    bar.style.width='0';
+  }
   const note=document.getElementById('fbNote');
   if(budget>0){
     if(total>budget){bar.classList.add('over');note.innerHTML='<span style="color:var(--status-red);font-weight:700">Over budget by ₵'+(total-budget)+'</span> — trim a few items';}
@@ -1666,7 +1699,7 @@ function renderAll(){updHdr();renderToday();renderWeek();renderWater();renderWei
 load();renderAll();
 </script>
 <script>
-// v7.5: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
+// v7.6: installable app. Registers the offline file and shows an Install button when Chrome allows. Does not touch saved data.
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(){});});}
 (function(){
   var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
