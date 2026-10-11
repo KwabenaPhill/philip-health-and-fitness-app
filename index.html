@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v8.8 💪</title>
+<title>Philip Health And Fitness v8.9 💪</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#1A100E">
+<meta name="theme-color" content="#F5F3FF">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Health &amp; Fitness">
@@ -718,13 +718,105 @@ input::placeholder,textarea::placeholder{color:#6E6E73!important}
 #tab-food .meal-log-btn,#tab-food .meal-log-btn.added,#tab-food .meal-card .meal-log-btn{background:#1C1C1F!important;border:1px solid #2A2A2E!important;color:#fff!important}
 :root{--acc:#FF375F;--onAcc:#fff;--accSoft:rgba(255,55,95,.14)}
 </style>
+<script>try{if(localStorage.getItem("philip_fit_theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<style id="design-violet">
+/* v8.9 DESIGN: Deep Violet, with Light and Dark mode (Settings > Appearance). Visual layer only: no features or data changed. Keep this block last in <head>. */
+:root{--acc:#4421D1;--accRGB:68,33,209;--onAcc:#FFFFFF;--accSoft:rgba(68,33,209,.12);
+  --fbg:#ECE7FC;--fcard:#FFFFFF;--fsoft:#F3F0FE;--fchip:#E4DCFC;--fline:#DED6FA;--ftext:#110A2B;--fmuted:#5A5578;--fnav:#7C779A;
+  --fhero1:#5B34F0;--fhero2:#2A1290;--fart1:#E6DFFD;--fart2:#D4C8FB;--ffig:#4421D1;--fground:#B3A5F3;--fsh:0 4px 18px rgba(48,22,160,.10);
+  --fgreen:#0F8A3C;--fgreenbg:#DDF3E5;--fred:#D92D3A}
+html[data-theme="dark"]{--acc:#7B5CFF;--accRGB:123,92,255;--accSoft:rgba(123,92,255,.18);
+  --fbg:#07051A;--fcard:#14102B;--fsoft:#1D1838;--fchip:#2A2250;--fline:#2A2350;--ftext:#FFFFFF;--fmuted:#B7B0D6;--fnav:#9A93BD;
+  --fhero1:#6B45FF;--fhero2:#2E1499;--fart1:#221B45;--fart2:#2E2460;--ffig:#A48DFF;--fground:#4D3F8F;--fsh:0 4px 18px rgba(0,0,0,.35);
+  --fgreen:#34D17A;--fgreenbg:rgba(52,209,122,.15);--fred:#FF5A64}
+:root{--bg:var(--fbg)!important;--card:var(--fcard)!important;--card2:var(--fsoft)!important;--border:var(--fline)!important;--text:var(--ftext)!important;--muted:var(--fmuted)!important;
+  --accent:var(--acc)!important;--accent-dim:var(--accSoft)!important;--on-accent:#fff!important;
+  --green:var(--fgreen)!important;--green-dim:var(--fgreenbg)!important;--red:var(--fred)!important;--red-dim:rgba(217,45,58,.12)!important;
+  --status-red:var(--fred)!important;--status-yellow:#D99100!important;--status-green:var(--fgreen)!important}
+html,body{background:var(--fbg)!important;color:var(--ftext)!important}
+/* header */
+.hdr{background:var(--fbg)!important;border-bottom:none!important}
+.hdr-eyebrow{color:var(--acc)!important}
+.hdr-title{color:var(--ftext)!important}
+.hdr-ver{background:var(--fchip)!important;color:var(--acc)!important}
+.hdr-pill{background:var(--fcard)!important;border:none!important;box-shadow:var(--fsh)!important;color:var(--ftext)!important}
+.hp-lbl{color:var(--fmuted)!important}.hp-sep{background:var(--fline)!important}
+/* hero progress card */
+.prog-wrap{background:linear-gradient(135deg,var(--fhero1) 0%,var(--fhero2) 100%)!important;border:none!important;box-shadow:0 10px 26px rgba(48,22,160,.35)!important;color:#fff!important}
+.prog-wrap .ring-bg{stroke:rgba(255,255,255,.25)!important}.prog-wrap .ring-fill{stroke:#fff!important}.prog-wrap .ring-txt{color:#fff!important}
+.prog-info h3{color:#fff!important}.prog-info p{color:rgba(255,255,255,.85)!important}
+.mini-b{background:rgba(255,255,255,.25)!important}.mini-b.done{background:#fff!important}
+/* section titles */
+.sec{color:var(--ftext)!important;font-size:17px!important;font-weight:700!important;letter-spacing:-.2px!important;text-transform:none!important}
+.sec::after{display:none!important}.sec-sub{color:var(--fmuted)!important}
+/* cards */
+.wk-card,.m-card,.stat-card,.pg-bars,.weight-card,.food-budget-card,.copy-card,.edit-block,.goal-list>*,.gsum,.meal-card,.food-cat,.st-block,.goal,.food-item{background:var(--fcard)!important;border:none!important;box-shadow:var(--fsh)!important;color:var(--ftext)!important}
+[class*="card"]{border-color:var(--fline)!important}
+.wk-card.rest-wk{background:var(--fcard)!important}
+.wk-icon{background:var(--accSoft)!important;border:none!important}
+.wk-meta h2{color:var(--ftext)!important}.wk-time{color:var(--acc)!important}.wk-desc{color:var(--fmuted)!important}
+.wk-btn,.wk-btn.pend,.wk-btn.status-red{background:var(--acc)!important;color:#fff!important;border:none!important;box-shadow:0 6px 16px rgba(48,22,160,.30)!important}
+.wk-btn.done,.wk-btn.status-green{background:var(--fgreenbg)!important;color:var(--fgreen)!important;border:none!important;box-shadow:none!important}
+/* numbers */
+.mr-bg{stroke:var(--fchip)!important}.mr-fill,#waterRing,#stepsRing{stroke:var(--acc)!important}
+.m-num{color:var(--ftext)!important}.m-goal,.m-sub{color:var(--fmuted)!important}.m-title{color:var(--ftext)!important}
+.m-chip,.m-pm{background:var(--fchip)!important;color:var(--acc)!important;border:none!important}
+.m-go,.m-pm.plus{background:var(--acc)!important;color:#fff!important;border:none!important}
+.m-reset{color:var(--acc)!important}
+.gdot,.glass{background:var(--fchip)!important;border-color:var(--fline)!important}.gdot.filled{background:var(--acc)!important;border-color:var(--acc)!important}
+/* inputs */
+input,textarea,select,.m-inp,.add-inp,.weight-inp,.fb-budget-inp,.copy-prev{background:var(--fsoft)!important;border:1px solid var(--fline)!important;color:var(--ftext)!important}
+input:focus,textarea:focus,select:focus{border-color:var(--acc)!important;outline:none}
+input::placeholder,textarea::placeholder{color:var(--fnav)!important}
+/* buttons */
+.add-btn,.weight-add-btn,.copy-btn.go,.food-add-btn{background:var(--acc)!important;color:#fff!important;border:none!important}
+.copy-btn.preview,.wk-nav-btn{background:var(--fcard)!important;color:var(--acc)!important;border:none!important;box-shadow:var(--fsh)!important}
+.wk-lbl{color:var(--ftext)!important}
+.food-toggle{background:var(--fcard)!important;border:none!important;box-shadow:var(--fsh)!important}
+.ft-btn{background:transparent!important;color:var(--fmuted)!important;border:none!important}
+.ft-btn.active{background:var(--acc)!important;color:#fff!important}
+/* stats and week */
+.stat-num{color:var(--acc)!important}.stat-lbl,.pg-lbl{color:var(--fmuted)!important}
+.br-track{background:var(--acc)!important}.br-fill{background:var(--fchip)!important}
+.day-card{background:var(--fcard)!important;border:1px solid transparent!important;box-shadow:var(--fsh)!important;color:var(--ftext)!important}
+.day-card.today-c{background:var(--fsoft)!important;border-color:var(--acc)!important}
+.day-card.future-c{opacity:.7!important}
+.dc-dd{color:var(--ftext)!important}.dc-dn{color:var(--fmuted)!important}.day-card.today-c .dc-dd,.day-card.today-c .dc-dn{color:var(--acc)!important}
+.dc-check{border-color:var(--fline)!important}
+/* food */
+#tab-food .food-check,#tab-food .food-item.status-red .food-check{background:var(--fcard)!important;border:2px solid var(--fline)!important;color:#fff!important}
+#tab-food .food-item.status-green .food-check,#tab-food .food-item.bought .food-check{background:var(--acc)!important;border-color:var(--acc)!important;color:#fff!important}
+#tab-food .meal-log-btn,#tab-food .meal-log-btn.added,#tab-food .meal-card .meal-log-btn{background:var(--fchip)!important;border:none!important;color:var(--acc)!important}
+/* bottom nav */
+.bnav{background:var(--fcard)!important;border-top:1px solid var(--fline)!important;box-shadow:0 -6px 20px rgba(48,22,160,.08)!important}
+.ni{color:var(--fnav)!important;text-transform:none!important;letter-spacing:0!important}.ni.active{color:var(--acc)!important}
+.toast{background:#1B1530!important;color:#fff!important;border:none!important}
+html[data-theme="dark"] .toast{background:#2A2250!important}
+/* appearance switch */
+.fx-theme{display:flex;gap:6px;background:var(--fcard);border-radius:16px;padding:6px;box-shadow:var(--fsh);margin:0 0 6px}
+.fx-theme button{flex:1;border:none;border-radius:12px;padding:12px 8px;font:700 14px Inter,system-ui,sans-serif;background:transparent;color:var(--fmuted);cursor:pointer}
+.fx-theme button.on{background:var(--acc);color:#fff}
+/* exercise drawings */
+.fx-hero{margin:-4px -4px 14px;border-radius:18px;background:linear-gradient(135deg,var(--fart1),var(--fart2));height:150px;display:grid;place-items:center;overflow:hidden}
+.fx-hero svg{width:210px;height:140px}
+.fx-b{stroke:var(--ffig);stroke-width:9;stroke-linecap:round;stroke-linejoin:round;fill:none}.fx-h{fill:var(--ffig)}.fx-g{stroke:var(--fground);stroke-width:4;stroke-linecap:round}
+.fx-z{fill:var(--ffig)}
+.fx-list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.fx-row{display:flex;align-items:center;gap:12px;background:var(--fsoft);border-radius:14px;padding:8px 12px 8px 8px}
+.fx-row .fx-mini{width:56px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--fart1),var(--fart2));display:grid;place-items:center;flex:none}
+.fx-row .fx-mini svg{width:52px;height:38px}.fx-row .fx-b{stroke-width:11}
+.fx-row b{font-size:14.5px;font-weight:700;color:var(--ftext)}.fx-row small{display:block;font-size:12px;color:var(--fmuted);margin-top:1px}
+.fx-row .fx-n{margin-left:auto;font-size:13px;font-weight:700;color:var(--acc);background:var(--accSoft);padding:4px 10px;border-radius:99px}
+#tab-food .meal-card[class] .meal-log-btn.meal-log-btn,html .meal-log-btn.meal-log-btn{background:var(--fchip)!important;border:none!important;color:var(--acc)!important}
+#tab-food .meal-card[class] .meal-log-btn.meal-log-btn.added,html .meal-log-btn.meal-log-btn.added{background:var(--acc)!important;color:#fff!important}
+</style>
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v8.8</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v8.9</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -1909,6 +2001,45 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
     document.body.appendChild(b);
   });
   window.addEventListener('appinstalled',function(){deferred=null;var b=document.getElementById('hfInstallBtn');if(b)b.remove();});
+})();
+</script>
+<script id="fx-figures">
+/* v8.9 exercise drawings (visual only) */
+(function(){
+const G='<line class="fx-g" x1="10" y1="118" x2="180" y2="118"/>';
+const S=(b)=>'<svg viewBox="0 0 190 130">'+G+b+'</svg>';
+const FIG={
+ pushup:S('<circle class="fx-h" cx="150" cy="58" r="11"/><path class="fx-b" d="M138 66 L52 92 L22 112"/><path class="fx-b" d="M130 70 L128 112"/>'),
+ squat:S('<circle class="fx-h" cx="86" cy="26" r="11"/><path class="fx-b" d="M84 38 L74 72"/><path class="fx-b" d="M74 72 L108 74 L104 112"/><path class="fx-b" d="M82 48 L122 54"/>'),
+ plank:S('<circle class="fx-h" cx="152" cy="74" r="11"/><path class="fx-b" d="M140 82 L40 104 L22 112"/><path class="fx-b" d="M128 86 L126 110 L142 110"/>'),
+ burpee:S('<circle class="fx-h" cx="95" cy="30" r="11"/><path class="fx-b" d="M95 42 L95 76"/><path class="fx-b" d="M95 76 L80 92 L86 106"/><path class="fx-b" d="M95 76 L110 92 L104 106"/><path class="fx-b" d="M95 50 L72 22"/><path class="fx-b" d="M95 50 L118 22"/>'),
+ jacks:S('<circle class="fx-h" cx="95" cy="20" r="11"/><path class="fx-b" d="M95 32 L95 72 L70 112"/><path class="fx-b" d="M95 72 L120 112"/><path class="fx-b" d="M95 42 L66 14"/><path class="fx-b" d="M95 42 L124 14"/>'),
+ jog:S('<circle class="fx-h" cx="104" cy="20" r="11"/><path class="fx-b" d="M102 32 L92 70"/><path class="fx-b" d="M92 70 L118 88 L110 114"/><path class="fx-b" d="M92 70 L72 92 L52 92"/><path class="fx-b" d="M100 42 L122 56 L132 44"/><path class="fx-b" d="M100 42 L80 54 L70 68"/>'),
+ gym:S('<circle class="fx-h" cx="95" cy="40" r="11"/><path class="fx-b" d="M95 52 L95 86 L80 114"/><path class="fx-b" d="M95 86 L110 114"/><path class="fx-b" d="M95 60 L72 42 L72 20"/><path class="fx-b" d="M95 60 L118 42 L118 20"/><path class="fx-b" d="M52 20 L138 20"/><rect class="fx-h" x="40" y="8" width="11" height="24" rx="3"/><rect class="fx-h" x="139" y="8" width="11" height="24" rx="3"/>'),
+ rest:S('<circle class="fx-h" cx="40" cy="98" r="11"/><path class="fx-b" d="M54 104 L150 104"/><path class="fx-b" d="M70 104 L100 92 L150 96"/><path class="fx-b" d="M30 112 L160 112"/><text x="120" y="60" class="fx-z" font-size="22" font-weight="800" font-family="Inter,Arial">z</text><text x="138" y="42" class="fx-z" font-size="28" font-weight="800" font-family="Inter,Arial">z</text><text x="158" y="22" class="fx-z" font-size="34" font-weight="800" font-family="Inter,Arial">Z</text>')
+};
+const MOVES=[[/push-?ups?/i,'pushup','Push-ups','Chest · Arms'],[/squats?/i,'squat','Squats','Legs'],[/burpees?/i,'burpee','Burpees','Full body'],[/planks?/i,'plank','Plank','Core'],[/jumping jacks?/i,'jacks','Jumping Jacks','Cardio']];
+function heroFor(sc){const t=(sc.type||'')+' '+(sc.lbl||'');if(sc.isRest)return 'rest';if(/jog/i.test(t)&&!/home/i.test(t))return 'jog';if(/gym/i.test(t))return 'gym';return 'pushup';}
+function movesFrom(desc){const out=[];String(desc||'').split(/→|·|,|\./).forEach(p=>{for(const [re,k,n,sub] of MOVES){const m=p.match(re);if(m&&!out.some(o=>o.k===k)){const before=p.slice(0,m.index);const sec=before.match(/(\d+)\s*s\s*$/i),num=before.match(/(\d+)\s*$/);out.push({k,n,sub,c:sec?sec[1]+' sec':num?num[1]+' reps':''});}}});return out;}
+function titleSecs(){document.querySelectorAll('.sec').forEach(sec=>{if(sec.dataset.fxT)return;sec.dataset.fxT='1';sec.childNodes.forEach(n=>{if(n.nodeType===3)n.textContent=n.textContent.replace(/[A-Z][A-Z']+/g,w=>(w==='AM'||w==='PM')?w:w[0]+w.slice(1).toLowerCase());});});}
+
+const TK='philip_fit_theme';
+function getTheme(){try{return localStorage.getItem(TK)==='dark'?'dark':'light';}catch(e){return 'light';}}
+window.fxSetTheme=function(t){try{localStorage.setItem(TK,t);}catch(e){}document.documentElement.setAttribute('data-theme',t);const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==='dark'?'#07051A':'#ECE7FC';document.querySelectorAll('.fx-theme button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));};
+function themeSwitch(){const st=document.getElementById('tab-settings');if(!st||document.getElementById('fxTheme'))return;const sec=document.createElement('div');sec.className='sec';sec.style.marginTop='16px';sec.dataset.fxT='1';sec.textContent='Appearance';
+  const box=document.createElement('div');box.className='fx-theme';box.id='fxTheme';box.innerHTML='<button data-t="light">☀️ Light</button><button data-t="dark">🌙 Dark</button>';box.onclick=e=>{const b=e.target.closest('button');if(b)window.fxSetTheme(b.dataset.t);};
+  st.insertBefore(box,st.firstChild);st.insertBefore(sec,box);const first=st.querySelector('.sec[style]:not([data-fx-t])');if(first)first.style.marginTop='22px';window.fxSetTheme(getTheme());}
+window.fxDecorate=function(){try{titleSecs();themeSwitch();
+  const card=document.getElementById('wkCard');if(!card)return;const sc=SCHED[new Date().getDay()];if(!sc)return;
+  let h=card.querySelector('.fx-hero');if(!h){h=document.createElement('div');h.className='fx-hero';card.insertBefore(h,card.firstChild);}
+  h.innerHTML=FIG[heroFor(sc)];
+  let l=card.querySelector('.fx-list');const mv=sc.isRest?[]:movesFrom(sc.desc);
+  if(!mv.length){if(l)l.remove();return;}
+  if(!l){l=document.createElement('div');l.className='fx-list';const bw=document.getElementById('wkBtnWrap');card.insertBefore(l,bw);}
+  l.innerHTML=mv.map(m=>`<div class="fx-row"><div class="fx-mini">${FIG[m.k]}</div><div><b>${m.n}</b><small>${m.sub}</small></div>${m.c?`<span class="fx-n">${m.c}</span>`:''}</div>`).join('');
+}catch(e){}};
+const _rt=window.renderToday;if(typeof _rt==='function'){window.renderToday=function(){const r=_rt.apply(this,arguments);window.fxDecorate();return r;};}
+document.addEventListener('DOMContentLoaded',()=>setTimeout(window.fxDecorate,50));setTimeout(window.fxDecorate,300);
 })();
 </script>
 </body>
