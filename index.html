@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v9.0 💪</title>
+<title>Philip Health And Fitness v9.1 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A100E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -692,7 +692,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 }
 </style>
 <style id="design-drawings">
-/* v9.0: original brown and cream theme. This block only styles the exercise drawings. */
+/* v9.1: original brown and cream theme. This block only styles the exercise drawings. */
 .fx-hero{margin:-4px -4px 14px;border-radius:18px;background:linear-gradient(135deg,var(--card2),#33271F);border:1px solid var(--border);height:150px;display:grid;place-items:center;overflow:hidden}
 .fx-hero svg{width:210px;height:140px}
 .fx-b{stroke:var(--accent);stroke-width:9;stroke-linecap:round;stroke-linejoin:round;fill:none}.fx-h,.fx-z{fill:var(--accent)}.fx-g{stroke:var(--border);stroke-width:4;stroke-linecap:round}
@@ -703,13 +703,40 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 .fx-row b{font-size:14.5px;font-weight:700;color:var(--text)}.fx-row small{display:block;font-size:12px;color:var(--muted);margin-top:1px}
 .fx-row .fx-n{margin-left:auto;font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-dim);padding:4px 10px;border-radius:99px}
 </style>
+<style id="app-styles">
+/* v9.1 app styles: 1 Brown (default, unchanged), 2 Deep Brown, 3 Coach. Picked in Settings > APP STYLE. */
+html[data-style="deep"]{--bg:#0D0705;--card:#080403;--card2:#1A110D;--border:#2E211B;--accent:#E3B399;--accent-dim:rgba(227,179,153,0.14);--text:#F2E1D7;--muted:#A99387;--on-accent:#0D0705;}
+html[data-style="deep"] .fx-hero{background:linear-gradient(135deg,#1A110D,#24170F)!important}
+html[data-style="deep"] .fx-row .fx-mini{background:#24170F!important}
+html[data-style="coach"]{--bg:#1C1C1E;--card:#2A2A2C;--card2:#333336;--border:#3A3A3D;--accent:#E5534B;--accent-dim:rgba(229,83,75,0.16);--text:#FFFFFF;--muted:#A1A1A6;--on-accent:#FFFFFF;}
+html[data-style="coach"] body{background:#1C1C1E}
+html[data-style="coach"] .hdr-title,html[data-style="coach"] .wk-meta h2,html[data-style="coach"] .prog-info h3,html[data-style="coach"] .edit-block-hdr h3{text-transform:uppercase;font-weight:900!important;letter-spacing:.3px!important;color:#fff!important}
+html[data-style="coach"] .hdr-eyebrow{color:#A1A1A6!important}
+html[data-style="coach"] .sec{color:#fff!important;font-weight:900!important;font-size:15px!important;letter-spacing:.5px!important}
+html[data-style="coach"] .wk-card,html[data-style="coach"] .m-card,html[data-style="coach"] .st-block,html[data-style="coach"] .edit-block,html[data-style="coach"] .prog-wrap{border-color:transparent!important;border-radius:14px!important}
+html[data-style="coach"] .fx-hero{background:linear-gradient(135deg,#7B3FE4,#3D7BF5)!important;border:none!important;border-radius:14px!important}
+html[data-style="coach"] .fx-hero .fx-b{stroke:#fff}html[data-style="coach"] .fx-hero .fx-h,html[data-style="coach"] .fx-hero .fx-z{fill:#fff}html[data-style="coach"] .fx-hero .fx-g{stroke:rgba(255,255,255,.35)}
+html[data-style="coach"] .fx-row{border:none!important}
+html[data-style="coach"] .fx-row .fx-mini{background:linear-gradient(135deg,#7B3FE4,#3D7BF5)!important}
+html[data-style="coach"] .fx-row:nth-child(4n+2) .fx-mini{background:linear-gradient(135deg,#2F80ED,#56CCF2)!important}
+html[data-style="coach"] .fx-row:nth-child(4n+3) .fx-mini{background:linear-gradient(135deg,#16A085,#2ECC71)!important}
+html[data-style="coach"] .fx-row:nth-child(4n+4) .fx-mini{background:linear-gradient(135deg,#E5534B,#F2994A)!important}
+html[data-style="coach"] .fx-row .fx-mini .fx-b{stroke:#fff}html[data-style="coach"] .fx-row .fx-mini .fx-h{fill:#fff}
+html[data-style="coach"] .ni.active{color:#fff!important}html[data-style="coach"] .ni.active .ni-dot{background:#fff!important}
+html[data-style="coach"] .ni{color:#8E8E93!important}
+.style-pick{display:flex;gap:8px}
+.style-pick button{flex:1;padding:12px 6px;border-radius:14px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+.style-pick button .sw{display:block;height:26px;border-radius:8px;margin-bottom:7px}
+.style-pick button.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+</style>
+<script>(function(){try{var t=localStorage.getItem('philip_fit_style');if(t==='deep'||t==='coach')document.documentElement.setAttribute('data-style',t);}catch(e){}})();</script>
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.0</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.1</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -949,7 +976,16 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 <!-- ===== SETTINGS ===== -->
 <div class="tab" id="tab-settings">
 
-  <div class="sec" style="margin-top:16px">TRAINING SCHEDULE</div>
+  <div class="sec" style="margin-top:16px">APP STYLE</div>
+  <div class="st-block" style="padding:12px">
+    <div class="style-pick">
+      <button id="stl-brown" onclick="setStyle('brown')"><span class="sw" style="background:linear-gradient(135deg,#27201C,#F9D7C7)"></span>1 Brown</button>
+      <button id="stl-deep" onclick="setStyle('deep')"><span class="sw" style="background:linear-gradient(135deg,#0D0705,#E3B399)"></span>2 Deep Brown</button>
+      <button id="stl-coach" onclick="setStyle('coach')"><span class="sw" style="background:linear-gradient(135deg,#7B3FE4,#3D7BF5 60%,#E5534B)"></span>3 Coach</button>
+    </div>
+  </div>
+
+  <div class="sec">TRAINING SCHEDULE</div>
   <div class="edit-block">
     <div class="edit-block-hdr"><h3>Weekly Plan</h3><p>Your full week at a glance</p></div>
     <div class="edit-block-body" id="schedRows"></div>
@@ -977,7 +1013,7 @@ input::placeholder,textarea::placeholder{color:#A7968E;}
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v9.0</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v9.1</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -1897,7 +1933,7 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
 })();
 </script>
 <script id="fx-figures">
-/* v9.0 exercise drawings (visual only) */
+/* v9.1 exercise drawings (visual only) */
 (function(){
 const G='<line class="fx-g" x1="10" y1="118" x2="180" y2="118"/>';
 const S=(b)=>'<svg viewBox="0 0 190 130">'+G+b+'</svg>';
@@ -1928,6 +1964,14 @@ window.fxDecorate=function(){try{
 const _rt=window.renderToday;if(typeof _rt==='function'){window.renderToday=function(){const r=_rt.apply(this,arguments);window.fxDecorate();return r;};}
 document.addEventListener('DOMContentLoaded',()=>setTimeout(window.fxDecorate,50));setTimeout(window.fxDecorate,300);
 })();
+</script>
+<script>
+function setStyle(t){try{localStorage.setItem('philip_fit_style',t);}catch(e){}
+if(t==='brown')document.documentElement.removeAttribute('data-style');else document.documentElement.setAttribute('data-style',t);markStyle();}
+function markStyle(){var t='brown';try{t=localStorage.getItem('philip_fit_style')||'brown';}catch(e){}
+['brown','deep','coach'].forEach(function(k){var b=document.getElementById('stl-'+k);if(b)b.classList.toggle('on',k===t);});
+var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='deep'?'#0D0705':t==='coach'?'#1C1C1E':'#1A100E');}
+markStyle();
 </script>
 </body>
 </html>
