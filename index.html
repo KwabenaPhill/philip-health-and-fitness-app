@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v9.3 💪</title>
+<title>Philip Health And Fitness v9.4 💪</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#1A100E">
+<meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Health &amp; Fitness">
@@ -724,9 +724,9 @@ html[data-style="coach"] .fx-row:nth-child(4n+4) .fx-mini{background:linear-grad
 html[data-style="coach"] .fx-row .fx-mini .fx-b{stroke:#fff}html[data-style="coach"] .fx-row .fx-mini .fx-h{fill:#fff}
 html[data-style="coach"] .ni.active{color:#fff!important}html[data-style="coach"] .ni.active .ni-dot{background:#fff!important}
 html[data-style="coach"] .ni{color:#8E8E93!important}
-.style-pick{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.style-pick button{flex:1;padding:12px 6px;border-radius:14px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;cursor:pointer}
-.style-pick button .sw{display:block;height:26px;border-radius:8px;margin-bottom:7px}
+.style-pick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.style-pick button{flex:1;padding:6px 4px;border-radius:10px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-family:'Outfit',sans-serif;font-weight:700;font-size:10.5px;line-height:1.2;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.style-pick button .sw{display:block;height:12px;border-radius:6px;margin-bottom:4px}
 .style-pick button.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 
 /* v9.3 style 4 openGym (deeper black and green; Food boxes empty until ticked): near-black, one green colour, Inter font, flat dark cards, week strip on TODAY. */
@@ -767,14 +767,14 @@ html[data-style="gym"] #tab-food .food-item .food-check,html[data-style="gym"] #
 html[data-style="gym"] #tab-food .food-item.bought .food-check,html[data-style="gym"] #tab-food .food-item.status-green .food-check{background:#16A34A!important;border:2px solid #16A34A!important;color:#FFFFFF!important;font-size:16px!important;font-weight:900!important}
 html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!important}
 </style>
-<script>(function(){try{var t=localStorage.getItem('philip_fit_style');if(t==='deep'||t==='coach'||t==='gym')document.documentElement.setAttribute('data-style',t);}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('philip_fit_style')||'gym';if(t==='deep'||t==='coach'||t==='gym')document.documentElement.setAttribute('data-style',t);}catch(e){}})();</script>
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.3</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.4</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -810,7 +810,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
       <div class="wk-icon" id="wkIcon">🏠</div>
       <div class="wk-meta">
         <h2 id="wkTitle">Home Workout</h2>
-        <div class="wk-time" id="wkTime">⏰ 5:30 AM</div>
+        <div class="wk-time" id="wkTime">⏰ 6:00 PM</div>
         <div class="wk-desc" id="wkDesc"></div>
       </div>
     </div>
@@ -1016,7 +1016,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 <div class="tab" id="tab-settings">
 
   <div class="sec" style="margin-top:16px">APP STYLE</div>
-  <div class="st-block" style="padding:12px">
+  <div class="st-block" style="padding:8px">
     <div class="style-pick">
       <button id="stl-brown" onclick="setStyle('brown')"><span class="sw" style="background:linear-gradient(135deg,#27201C,#F9D7C7)"></span>1 Brown</button>
       <button id="stl-deep" onclick="setStyle('deep')"><span class="sw" style="background:linear-gradient(135deg,#0D0705,#E3B399)"></span>2 Deep Brown</button>
@@ -1053,7 +1053,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
   <div class="st-block">
     <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v9.3</strong>
+      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v9.4</strong>
       ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
       ✅ Works offline in Chrome · No internet needed<br>
       ✅ Download backup anytime
@@ -1079,11 +1079,11 @@ const WATER_GOAL=8;
 
 const SCHED={
   0:{lbl:'Rest Day',icon:'😴',color:'#6b7894',bg:'rgba(107,120,148,.12)',time:'All day',isRest:true,type:'rest',desc:'Full rest — recover and grow stronger'},
-  1:{lbl:'Home Workout',icon:'🏠',color:'#32ADE6',bg:'rgba(50,173,230,.15)',time:'5:30 AM',isRest:false,type:'home',desc:'4 rounds: 20 Push-ups → 20 Squats → 15 Burpees → 30s Plank → 20 Jumping Jacks. Rest 60s between rounds.'},
-  2:{lbl:'Gym + Finisher',icon:'🏋️',color:'#FF9F0A',bg:'rgba(255,159,10,.15)',time:'5:30 AM',isRest:false,type:'gym',desc:'Full body weights + 15 min bodyweight finisher at the end.'},
+  1:{lbl:'Home Workout',icon:'🏠',color:'#32ADE6',bg:'rgba(50,173,230,.15)',time:'6:00 PM',isRest:false,type:'home',desc:'4 rounds: 20 Push-ups → 20 Squats → 15 Burpees → 30s Plank → 20 Jumping Jacks. Rest 60s between rounds.'},
+  2:{lbl:'Gym + Finisher',icon:'🏋️',color:'#FF9F0A',bg:'rgba(255,159,10,.15)',time:'5:30 PM',isRest:false,type:'gym',desc:'Full body weights at the gym. When you get home: short 10–15 min finisher (Push-ups · Squats · Plank).'},
   3:{lbl:'Jog + Workout',icon:'🏃',color:'#ff7b54',bg:'rgba(255,123,84,.15)',time:'5:30 AM',isRest:false,type:'jogworkout',desc:'Jog light 20–30 mins first, then small workout 20 mins. Total ~1 hour.'},
-  4:{lbl:'Gym',icon:'🏋️',color:'#FF9F0A',bg:'rgba(255,159,10,.15)',time:'5:30 AM',isRest:false,type:'gym',desc:'Full body weights: Legs → Back → Chest → Shoulders → Arms.'},
-  5:{lbl:'Home Workout',icon:'🏠',color:'#32ADE6',bg:'rgba(50,173,230,.15)',time:'5:30 AM',isRest:false,type:'home',desc:'Train at home. Push-ups · Squats · Burpees · Planks. Work with what you have. Stay consistent.'},
+  4:{lbl:'Gym',icon:'🏋️',color:'#FF9F0A',bg:'rgba(255,159,10,.15)',time:'5:30 PM',isRest:false,type:'gym',desc:'Full body weights: Legs → Back → Chest → Shoulders → Arms.'},
+  5:{lbl:'Home Workout',icon:'🏠',color:'#32ADE6',bg:'rgba(50,173,230,.15)',time:'6:00 PM',isRest:false,type:'home',desc:'Train at home. Push-ups · Squats · Burpees · Planks. Work with what you have. Stay consistent.'},
   6:{lbl:'Jogging',icon:'🏃',color:'#ff7b54',bg:'rgba(255,123,84,.15)',time:'5:30 AM',isRest:false,type:'jog',desc:'30–45 mins steady jog. Log your weight after in the Weight tab! 💪'}
 };
 
@@ -1317,7 +1317,7 @@ function renderWeek(){
   const s=dates[0],e=dates[6];
   document.getElementById('wkLbl').textContent=wkOff===0?'THIS WEEK':wkOff===-1?'LAST WEEK':wkOff===1?'NEXT WEEK':`${MONTHS[s.getMonth()]} ${s.getDate()} – ${MONTHS[e.getMonth()]} ${e.getDate()}`;
   const cont=document.getElementById('weekCont');cont.innerHTML='';
-  const subs={rest:'Recovery day',home:'Home Circuit · 5:30 AM',gym:'Full Body Gym · 5:30 AM',jog:'Jogging · 5:30 AM',jogworkout:'Jog + Workout · 5:30 AM'};
+  const subs={rest:'Recovery day',home:'Home Circuit',gym:'Full Body Gym',jog:'Jogging',jogworkout:'Jog + Workout'};
   dates.forEach(date=>{
     const dow=date.getDay();const k=dKey(date);const sc=SCHED[dow];const dd=readDD(k);
     const isToday=k===tStr;const isFuture=k>tStr;
@@ -1330,7 +1330,7 @@ function renderWeek(){
       <div class="dc-date"><div class="dc-dn">${DNAMES[dow]}</div><div class="dc-dd">${date.getDate()}</div></div>
       <div class="dc-info">
         <h4>${sc.icon} ${sc.lbl}</h4>
-        <p>${subs[sc.type]||sc.time}</p>
+        <p>${sc.isRest?subs.rest:(subs[sc.type]||sc.lbl)+' · '+sc.time}</p>
         <div class="dc-dots">
           <div class="mdot" title="Morning meal" style="background:${isFuture?'var(--border)':dd.m1?'var(--status-green)':'var(--border)'}"></div>
           <div class="mdot" title="Evening meal" style="background:${isFuture?'var(--border)':dd.m2?'var(--status-green)':'var(--border)'}"></div>
@@ -1542,7 +1542,7 @@ function renderProgress(){
 function renderEditSched(){
   const cont=document.getElementById('schedRows');cont.innerHTML='';
   const colors={0:'var(--text)',1:'var(--text)',2:'var(--text)',3:'var(--text)',4:'var(--text)',5:'var(--text)',6:'var(--text)'};
-  const descs={0:'Full rest',1:'Home Circuit',2:'Gym + 15 min Finisher',3:'Light Jog + Small Workout',4:'Full Body Gym',5:'Home Circuit',6:'Jogging 30–45 mins'};
+  const descs={0:'Full rest',1:'Home Circuit',2:'Gym + Home Finisher',3:'Light Jog + Small Workout',4:'Full Body Gym',5:'Home Circuit',6:'Jogging 30–45 mins'};
   DNAMES.forEach((d,i)=>{
     const sc=SCHED[i];const row=document.createElement('div');row.className='sched-row';
     row.innerHTML=`<div class="sched-day">${d}</div><div class="sched-right"><div class="sched-type" style="color:${colors[i]}">${sc.icon} ${sc.lbl}</div><div class="sched-desc">${descs[i]} · ${sc.time}</div></div>`;
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded',()=>setTimeout(window.fxDecorate,50
 <script>
 function setStyle(t){try{localStorage.setItem('philip_fit_style',t);}catch(e){}
 if(t==='brown')document.documentElement.removeAttribute('data-style');else document.documentElement.setAttribute('data-style',t);markStyle();}
-function markStyle(){var t='brown';try{t=localStorage.getItem('philip_fit_style')||'brown';}catch(e){}
+function markStyle(){var t='gym';try{t=localStorage.getItem('philip_fit_style')||'gym';}catch(e){}
 ['brown','deep','coach','gym'].forEach(function(k){var b=document.getElementById('stl-'+k);if(b)b.classList.toggle('on',k===t);});
 var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='deep'?'#0D0705':t==='coach'?'#1C1C1E':t==='gym'?'#000000':'#1A100E');}
 markStyle();
