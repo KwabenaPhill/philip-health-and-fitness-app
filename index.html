@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v10.0 💪</title>
+<title>Philip Health And Fitness v10.1 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
@@ -774,7 +774,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v10.0</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v10.1</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -985,7 +985,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
   <div class="s99-card s99-red">
     <button class="s99-row" onclick="s99Open('danger')"><span class="s99-ic" style="color:#FF453A;background:#2A1214"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M4 7h16M10 11v6M14 11v6M5.5 7l1 13h11l1-13M9 7V4h6v3"/></svg></span><span class="s99-tx"><b style="color:#FF453A">Clear data</b></span><span class="s99-chev">›</span></button>
   </div>
-<div class="s99-page" id="s99p-style"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>App style</b></div><div class="s99-body">
+<div class="s99-page" id="s99p-style"><div class="s99-top"><button class="s99-back" onclick="s101Back()">‹</button><b>App style</b></div><div class="s99-body">
   <div class="st-block" style="padding:8px">
     <div class="style-pick">
       <button id="stl-brown" onclick="setStyle('brown')"><span class="sw" style="background:linear-gradient(135deg,#27201C,#F9D7C7)"></span>1 Brown</button>
@@ -997,7 +997,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
 
 </div></div>
-<div class="s99-page" id="s99p-sched"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Training schedule</b></div><div class="s99-body">
+<div class="s99-page" id="s99p-sched"><div class="s99-top"><button class="s99-back" onclick="s101Back()">‹</button><b>Training schedule</b></div><div class="s99-body">
   <div class="edit-block">
     <div class="edit-block-hdr"><h3>Weekly Plan</h3></div>
     <div class="edit-block-body" id="schedRows"></div>
@@ -1005,7 +1005,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
 
 </div></div>
-<div class="s99-page" id="s99p-market"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Market list</b></div><div class="s99-body">
+<div class="s99-page" id="s99p-market"><div class="s99-top"><button class="s99-back" onclick="s101Back()">‹</button><b>Market list</b></div><div class="s99-body">
   <div class="edit-block"><div class="edit-block-body">    <div class="fb-budget-row s98-budget">
       <span class="fb-budget-lbl">Monthly Budget</span>
       <div class="fb-budget-edit">
@@ -1038,7 +1038,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
 
 </div></div>
-<div class="s99-page" id="s99p-meals"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Meals</b></div><div class="s99-body">
+<div class="s99-page" id="s99p-meals"><div class="s99-top"><button class="s99-back" onclick="s101Back()">‹</button><b>Meals</b></div><div class="s99-body">
   <div id="s98Meals"></div>
   <div class="sec">ADD A MEAL</div>
     <div class="edit-block">
@@ -1055,7 +1055,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
 
 </div></div>
-<div class="s99-page" id="s99p-danger"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Clear data</b></div><div class="s99-body">
+<div class="s99-page" id="s99p-danger"><div class="s99-top"><button class="s99-back" onclick="s101Back()">‹</button><b>Clear data</b></div><div class="s99-body">
   <div class="st-block">
     <button class="st-btn danger" onclick="clearToday()"><span>🗑️</span> Clear Today's Data</button>
   </div>
@@ -2179,6 +2179,21 @@ function fix(){['fbTotal','fbBought','fbLeft'].forEach(function(id){var e=docume
   document.querySelectorAll('#foodCats .food-price,.food-cat-sub,.s98-amt').forEach(function(e){var m=/^GHS\s*(-?\d+)$/.exec(e.textContent.trim());if(m){var t='GHS '+Number(m[1]).toLocaleString();if(e.textContent!==t)e.textContent=t;}});}
 var rf=window.renderFood;if(typeof rf==='function')window.renderFood=function(){var r=rf.apply(this,arguments);try{fix();}catch(e){}return r;};
 fix();
+})();
+</script>
+<!-- v10.1 (Philip, 9 Nov 2026): phone Back button steps back through where you were (folder page, then previous tab), and only leaves the app from the first screen. -->
+<script id="v101-js">
+(function(){
+var busy=false;
+function cur(){var a=document.querySelector('.ni.active');return a?a.id.replace('nav-',''):'today';}
+function openPage(){var p=document.querySelector('.s99-page.on');return p?p.id.replace('s99p-',''):null;}
+try{history.replaceState({fh:1,t:cur(),p:null},'');}catch(e){}
+var sw0=window.sw;window.sw=function(t){var was=cur(),pg=openPage();var r=sw0.apply(this,arguments);
+  if(!busy&&(t!==was||pg)){try{history.pushState({fh:1,t:t,p:null},'');}catch(e){}}return r;};
+var op0=window.s99Open;window.s99Open=function(k){var r=op0.apply(this,arguments);if(!busy){try{history.pushState({fh:1,t:'settings',p:k},'');}catch(e){}}return r;};
+window.s101Back=function(){if(history.state&&history.state.fh&&history.state.p){history.back();}else{s99Close();}};
+window.addEventListener('popstate',function(e){var st=e.state;if(!st||!st.fh)return;busy=true;
+  try{if(cur()!==st.t)sw0(st.t);s99Close();if(st.p)op0(st.p);}catch(x){}busy=false;});
 })();
 </script>
 </body>
