@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v9.6 💪</title>
+<title>Philip Health And Fitness v9.7 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
@@ -774,7 +774,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.6</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.7</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -901,7 +901,6 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
   <div class="weight-card">
     <div class="weight-head">
       <h3>Weight History & Records</h3>
-      <p>Log every Saturday after jogging, before eating 🏃</p>
     </div>
     <div class="weight-stats">
       <div class="wstat start"><div class="wstat-num" id="wStart">—</div><div class="wstat-lbl">Start</div></div>
@@ -910,7 +909,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
     </div>
     <div class="weight-log-list" id="weightLogList"></div>
     <div class="weight-add-row">
-      <input class="weight-inp" id="wgInput" placeholder="e.g. 78.5 kg" type="text">
+      <input class="weight-inp" id="wgInput" placeholder="Weight (kg)" type="text">
       <button class="weight-add-btn" onclick="logWeight()">Log ＋</button>
     </div>
   </div>
@@ -1027,14 +1026,11 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
   <div class="sec">TRAINING SCHEDULE</div>
   <div class="edit-block">
-    <div class="edit-block-hdr"><h3>Weekly Plan</h3><p>Your full week at a glance</p></div>
+    <div class="edit-block-hdr"><h3>Weekly Plan</h3></div>
     <div class="edit-block-body" id="schedRows"></div>
   </div>
 
   <div class="sec">BACKUP & RESTORE</div>
-  <div class="st-block">
-    <div class="st-desc">Data saves automatically in Chrome. Download a backup often to stay safe. Clear and Restore only touch this app — your other apps are never affected.</div>
-  </div>
   <div class="st-block">
     <button class="st-btn success" onclick="dlBackup()"><span>📥</span> Download Backup</button>
   </div>
@@ -1051,14 +1047,6 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
     <button class="st-btn danger" onclick="clearAll()"><span>⚠️</span> Clear ALL Data</button>
   </div>
 
-  <div class="st-block">
-    <div style="padding:18px;font-size:13px;color:var(--muted);line-height:1.9;">
-      <strong style="color:var(--text);display:block;margin-bottom:6px;">Philip Health And Fitness v9.6</strong>
-      ✅ Saves locally — <strong style="color:var(--green)">never expires</strong><br>
-      ✅ Works offline in Chrome · No internet needed<br>
-      ✅ Download backup anytime
-    </div>
-  </div>
 </div>
 
 <!-- NAV -->
@@ -1265,7 +1253,7 @@ function renderToday(){
   document.getElementById('wkTime').textContent='⏰ '+sc.time;
   document.getElementById('wkDesc').textContent=sc.desc;
   const bw=document.getElementById('wkBtnWrap');
-  if(sc.isRest)bw.innerHTML='<p style="font-size:13px;color:var(--muted);padding:6px 0 2px;">Rest well today. Recover strong. 💤</p>';
+  if(sc.isRest)bw.innerHTML='';
   else bw.innerHTML=`<button class="wk-btn ${dd.wk?'done':'pend'} ${dd.wk?'status-green':'status-red'}" onclick="toggleWorkout()">${dd.wk?'✓ Session Complete!':'Mark Session Done'}</button>`;
   renderSteps(k);renderWater();renderTodayLog();if(syncMealFlags(k))save();updRing();
 }
@@ -1392,7 +1380,7 @@ function renderWeight(){
     document.getElementById('wStart').textContent='—';
     document.getElementById('wCurrent').textContent='—';
     document.getElementById('wLost').textContent='—';
-    list.innerHTML='<p style="font-size:12px;color:var(--muted);">No entries yet. Log your weight every Saturday after jogging!</p>';
+    list.innerHTML='';
     return;
   }
   const first=D.weights[D.weights.length-1];
@@ -1469,7 +1457,7 @@ function renderGoalList(type){
       '<div class="goal-edit-btns"><button class="ge-save" onclick="saveGoalEdit(\''+type+'\')">Save goal</button><button class="ge-cancel" onclick="cancelGoalEdit()">Cancel</button></div></div></div>';
   }else if(!G.active){
     card='<div class="goal"><div class="goal-top"><div class="goal-ic">🎯</div>'+
-      '<div class="goal-main"><div class="goal-range unset">No active goal</div><div class="goal-meta">Set your next '+span+' goal</div></div>'+
+      '<div class="goal-main"><div class="goal-range unset">No active goal</div></div>'+
       '<div class="goal-act"><button class="gbtn mark" onclick="beginGoalEdit(\''+type+'\')">✎ Set goal</button></div></div></div>';
   }else{
     const g=G.active;const tgt=g.target?'<b>'+g.target+' kg</b> · ':'';
@@ -1742,7 +1730,7 @@ let expandedHist={};
 function renderFoodHistory(){
   const cont=document.getElementById('foodHistory');if(!cont)return;cont.innerHTML='';
   if(!Array.isArray(D.foodHistory)||!D.foodHistory.length){
-    cont.innerHTML='<div class="fh-empty">No months saved yet.<br>Tap "Complete This Month" when you finish shopping and your spend will be recorded here.</div>';
+    cont.innerHTML='<div class="fh-empty">No months saved yet.</div>';
     return;
   }
   D.foodHistory.forEach(h=>{
@@ -1894,7 +1882,7 @@ function renderTodayLog(){
     const cont=document.getElementById(g==='Morning'?'todayMorningLog':'todayEveningLog');
     if(!cont)return;cont.innerHTML='';
     const entries=D.mealPlan.filter(e=>e.group===g);
-    if(!entries.length){cont.innerHTML='<div class="tl-empty">No meal added yet. Go to Food → Meals and tap the yellow + on a meal. It stays here every day until you remove it.</div>';return;}
+    if(!entries.length){cont.innerHTML='<div class="tl-empty">No meal added yet.</div>';return;}
     entries.forEach(e=>{
       const open=!!expandedLog[e.pid];const ate=isEaten(e.pid);
       const card=document.createElement('div');card.className='tl-card';
@@ -2019,6 +2007,41 @@ for(var i=0;i<7;i++){var x=new Date(mon);x.setDate(mon.getDate()+i);var c=i<wd?'
 h+='<div class="gw-day '+c+'"><div class="gw-dn">'+names[i]+'</div><div class="gw-dd">'+x.getDate()+'</div><div class="gw-dot"></div></div>';}
 el.innerHTML=h+'</div>';}
 gymWeek();
+</script>
+<!-- v9.7 (Philip, 9 Nov 2026): crown card top (style 3), clean line icons everywhere, Today shows only the session and time, no help texts, cleaner Backup and Danger buttons. Visual only; saved data unchanged. -->
+<style id="v97">
+html .hdr{margin:12px 16px 0!important;border-radius:24px!important;background:linear-gradient(180deg,#0F3A22 0%,#141416 55%,#0E0E10 100%)!important;border:1px solid #1E1E22!important;padding:18px 14px 14px!important}html .hdr .hdr-pill{background:rgba(255,255,255,.04)!important;border:1px solid #26262B!important;border-radius:16px!important}html .hdr .hp-ic{line-height:0!important}html .hdr .hdr-pill .hp-item{gap:7px!important}
+.fx-ic{width:1.05em;height:1.05em;display:inline-block;vertical-align:-.17em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ni-icon .fx-ic{width:22px;height:22px;stroke-width:1.8;vertical-align:middle}
+#wkIcon .fx-ic{stroke-width:1.8}
+#wkCard .fx-hero,#wkCard .fx-list,#wkDesc{display:none!important}
+html .st-block>.st-btn{border-radius:16px!important;font-size:15px!important}
+html .st-btn .fx-ic{width:20px;height:20px}
+html .st-btn.success .fx-ic{color:#16A34A}
+html .st-btn.danger,html[data-style] .st-btn.danger{background:#1A0E10!important;color:#FF453A!important;border:1px solid #5A1F24!important;box-shadow:none!important}
+html .st-btn.danger .fx-ic{color:#FF453A!important}
+html .st-btn.danger:active{background:#FF453A!important;color:#fff!important}
+html .st-btn.danger:active .fx-ic{color:#fff!important}
+</style>
+<script id="v97-js">
+(function(){
+var I={"check": "<path d=\"M5 12.5l4.5 4.5L19 7.5\"/>", "cal": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15.5\" rx=\"3\"/><path d=\"M3.5 10h17M8 3v4M16 3v4\"/>", "cart": "<path d=\"M3 4h2l2 11h11l2-8H6\"/><circle cx=\"9\" cy=\"20\" r=\"1.3\"/><circle cx=\"17\" cy=\"20\" r=\"1.3\"/>", "trash": "<path d=\"M4 7h16M10 11v6M14 11v6M5.5 7l1 13h11l1-13M9 7V4h6v3\"/>", "fire": "<path d=\"M12 21c-3.9 0-7-2.9-7-6.6 0-2.7 1.6-4.6 3.2-6.2.3 1.6 1.2 2.7 2.3 3.1C10.4 8 11.8 5.2 14.6 3c.3 3 1.7 4.6 2.9 6.1 1.1 1.4 1.5 2.9 1.5 5.3 0 3.7-3.1 6.6-7 6.6z\"/>", "home": "<path d=\"M3 11l9-8 9 8M5 9.5V20h14V9.5M10 20v-6h4v6\"/>", "scale": "<path d=\"M12 3v18M7 21h10M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z\"/>", "run": "<circle cx=\"14.5\" cy=\"4\" r=\"2\"/><path d=\"M7 21l3-6 3 2.5V22M10 15l2-6 3.5 3 3.5 1M12 9l-4.5 1-2 3\"/>", "edit": "<path d=\"M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4\"/>", "alarm": "<circle cx=\"12\" cy=\"13\" r=\"7.5\"/><path d=\"M12 9.5V13l2.5 2M4.5 4.5l-2 2M19.5 4.5l2 2\"/>", "chart": "<path d=\"M4 20h16M7 16v-5M12 16V6M17 16v-8\"/>", "sunrise": "<path d=\"M3 19h18M6.5 15a5.5 5.5 0 0 1 11 0M12 4v4M4.5 9l1.5 1.5M19.5 9L18 10.5\"/>", "sunset": "<path d=\"M3 19h18M6.5 15a5.5 5.5 0 0 1 11 0M12 9V4M9.5 6.5L12 9l2.5-2.5\"/>", "trophy": "<path d=\"M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 21h7M10 17h4v4h-4z\"/>", "down": "<path d=\"M3 7l6 6 4-4 8 8M21 11v6h-6\"/>", "clip": "<rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"2\"/><path d=\"M9 4V3h6v1M9 10h6M9 14h6M9 18h4\"/>", "eye": "<path d=\"M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>", "warn": "<path d=\"M12 3.5l9.5 17h-19zM12 10v4.5M12 17.5h.01\"/>", "gym": "<path d=\"M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11\"/>", "x": "<path d=\"M6 6l12 12M18 6L6 18\"/>", "pan": "<circle cx=\"10\" cy=\"12\" r=\"6\"/><path d=\"M16 12h6\"/>", "refresh": "<path d=\"M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4\"/>", "coin": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 7.5v9M14.5 9.5h-3.5a1.75 1.75 0 0 0 0 3.5h2a1.75 1.75 0 0 1 0 3.5H9.5\"/>", "dl": "<path d=\"M12 4v11M7 10l5 5 5-5M4 20h16\"/>", "ul": "<path d=\"M12 15V4M7 9l5-5 5 5M4 20h16\"/>", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/>", "gear": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z\"/>", "moon": "<path d=\"M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z\"/>", "egg": "<path d=\"M12 3c3.5 0 6 6 6 10a6 6 0 0 1-12 0c0-4 2.5-10 6-10z\"/>", "apple": "<path d=\"M12 7.5c-2-2-7-1.5-7 4 0 4 3 9 5 9 1 0 1.5-.5 2-.5s1 .5 2 .5c2 0 5-5 5-9 0-5.5-5-6-7-4zM12 7.5c0-2 1-3.5 3-4.5\"/>", "leaf": "<path d=\"M5 19c0-9 5-14 15-15-1 10-6 15-15 15zM5 19l8-8\"/>", "cup": "<path d=\"M4 9h13v5a6 6 0 0 1-12 0zM17 10h2a2 2 0 0 1 0 4h-2M8.5 3v3M12.5 3v3\"/>", "drop": "<path d=\"M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z\"/>", "hour": "<path d=\"M6 3h12M6 21h12M7.5 3c0 6 9 6 9 9s-9 3-9 9M16.5 3c0 6-9 6-9 9s9 3 9 9\"/>", "target": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><circle cx=\"12\" cy=\"12\" r=\"4.5\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/>", "flag": "<path d=\"M5 21V4M5 4h12l-2 4 2 4H5\"/>", "lock": "<rect x=\"5\" y=\"11\" width=\"14\" height=\"10\" rx=\"2\"/><path d=\"M8 11V7a4 4 0 0 1 8 0v4\"/>", "foot": "<path d=\"M8 4c1.5 0 2.5 2 2.5 4.5S9.5 13 8 13 5.5 11 5.5 8.5 6.5 4 8 4zM16 9c1.5 0 2.5 2 2.5 4.5S17.5 18 16 18s-2.5-2-2.5-4.5S14.5 9 16 9zM6 15.5h4M14 20.5h4\"/>", "foot": "<path d=\"M8 4c1.5 0 2.5 2 2.5 4.5S9.5 13 8 13 5.5 11 5.5 8.5 6.5 4 8 4zM16 9c1.5 0 2.5 2 2.5 4.5S17.5 18 16 18s-2.5-2-2.5-4.5S14.5 9 16 9zM6 15.5h4M14 20.5h4\"/>", "pin": "<path d=\"M12 16v5M8 3h8l-1 6 3 3v2H6v-2l3-3z\"/>"},M={"\u2713": "check", "\u2705": "check", "\u2714": "check", "\ud83d\udc4d": "check", "\ud83d\udcc5": "cal", "\ud83d\udcc6": "cal", "\ud83d\uddd3": "cal", "\ud83d\uded2": "cart", "\ud83d\uddd1": "trash", "\ud83d\udd25": "fire", "\ud83c\udfe0": "home", "\u2696": "scale", "\ud83c\udfc3": "run", "\u270e": "edit", "\u270f": "edit", "\u23f0": "alarm", "\ud83d\udcca": "chart", "\ud83c\udf05": "sunrise", "\ud83c\udf06": "sunset", "\ud83c\udf89": "down", "\ud83d\udccb": "clip", "\ud83d\udc41": "eye", "\u26a0": "warn", "\ud83c\udfcb": "gym", "\ud83d\udcaa": "gym", "\u2716": "x", "\u2715": "x", "\ud83c\udf73": "pan", "\ud83d\udd04": "refresh", "\ud83d\udcb0": "coin", "\ud83d\udce5": "dl", "\ud83d\udce4": "ul", "\u2600": "sun", "\u2699": "gear", "\ud83d\ude34": "moon", "\ud83d\udca4": "moon", "\ud83c\udf19": "moon", "\ud83e\udd5a": "egg", "\ud83c\udf4c": "apple", "\ud83c\udf4e": "apple", "\ud83e\udd6c": "leaf", "\ud83c\udf75": "cup", "\ud83d\udca7": "drop", "\u23f3": "hour", "\ud83c\udfaf": "target", "\ud83c\udfc1": "flag", "\ud83d\udd12": "lock", "\ud83d\udccc": "pin", "\ud83d\udc63": "foot"},C={"check": "#16A34A", "fire": "#FF9F0A", "trash": "#FF453A", "warn": "#FF453A", "down": "#16A34A", "target": "#16A34A", "drop": "#32ADE6"};
+function svg(k){return '<svg class="fx-ic" viewBox="0 0 24 24" aria-hidden="true"'+(C[k]?' style="color:'+C[k]+'"':'')+'>'+I[k]+'</svg>';}
+var RE=new RegExp('('+Object.keys(M).map(function(k){return k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('|')+')[\uFE0F]?','g');
+var SKIP={SCRIPT:1,STYLE:1,TEXTAREA:1,INPUT:1,OPTION:1,SELECT:1,TITLE:1,svg:1};
+function run(root){try{
+  var w=document.createTreeWalker(root||document.body,NodeFilter.SHOW_TEXT,null),n,list=[];
+  while((n=w.nextNode())){RE.lastIndex=0;if(RE.test(n.nodeValue)){var p=n.parentNode;if(p&&!SKIP[p.nodeName]&&!(p.closest&&p.closest('svg')))list.push(n);}}
+  list.forEach(function(t){var span=document.createElement('span');span.style.display='contents';
+    span.innerHTML=t.nodeValue.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(RE,function(m,a){return svg(M[a]);});
+    t.parentNode.replaceChild(span,t);});
+}catch(e){}}
+var S={cal:I.cal,fire:I.fire,check:'<circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.7 2.7L16 9.6"/>'},HC=['#E5E5EA','#FF9F0A','#22C55E'],HB=['#26262B','#3A2412','#0F2A1A'];
+function top(){var ics=document.querySelectorAll('.hdr .hp-ic');['cal','fire','check'].forEach(function(k,i){var e=ics[i];if(!e||e.dataset.v97)return;e.dataset.v97='1';
+  e.innerHTML='<span style="width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:'+HB[i]+'"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:'+HC[i]+';stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block">'+S[k]+'</svg></span>';});}
+top();run();
+var q=0;if(window.MutationObserver)new MutationObserver(function(){if(q)return;q=1;requestAnimationFrame(function(){q=0;run();});}).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
 </script>
 </body>
 </html>
