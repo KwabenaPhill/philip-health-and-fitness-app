@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v9.8 💪</title>
+<title>Philip Health And Fitness v9.9 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
@@ -774,7 +774,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.8</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.9</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -974,8 +974,18 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
 <!-- ===== SETTINGS ===== -->
 <div class="tab" id="tab-settings">
-
-  <div class="sec" style="margin-top:16px">APP STYLE</div>
+  <div class="s99-card s99-backup">
+    <div class="s99-bh"><span class="s99-ic" style="color:#16A34A"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></span><span class="s99-tx"><b>Backup</b><small id="s99BkSub"></small></span></div>
+    <div class="s99-bb"><button onclick="dlBackup()"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg> Download</button><button onclick="document.getElementById('rFile').click()"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M12 15V4M7 9l5-5 5 5M4 20h16"/></svg> Restore</button></div>
+    <input type="file" id="rFile" accept=".json" style="display:none" onchange="restoreB(event)">
+  </div>
+  <div class="s99-card">
+    <button class="s99-row" onclick="s99Open('style')"><span class="s99-ic" style="color:#A78BFA"><svg viewBox="0 0 24 24" class="s99-svg"><circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1.2"/><circle cx="12" cy="7.5" r="1.2"/><circle cx="15.5" cy="10" r="1.2"/><path d="M12 21a3 3 0 0 1 0-6h1.5a2 2 0 0 0 0-4"/></svg></span><span class="s99-tx"><b>App style</b><small id="s99sStyle"></small></span><span class="s99-chev">›</span></button><button class="s99-row" onclick="s99Open('sched')"><span class="s99-ic" style="color:#32ADE6"><svg viewBox="0 0 24 24" class="s99-svg"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h3M8 17h6"/></svg></span><span class="s99-tx"><b>Training schedule</b><small id="s99sSched"></small></span><span class="s99-chev">›</span></button><button class="s99-row" onclick="s99Open('market')"><span class="s99-ic" style="color:#16A34A"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M3 4h2l2 11h11l2-8H6"/><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></span><span class="s99-tx"><b>Market list</b><small id="s99sMarket"></small></span><span class="s99-chev">›</span></button><button class="s99-row" onclick="s99Open('meals')"><span class="s99-ic" style="color:#FF9F0A"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 2-3 6s1 4 3 4v8"/></svg></span><span class="s99-tx"><b>Meals</b><small id="s99sMeals"></small></span><span class="s99-chev">›</span></button>
+  </div>
+  <div class="s99-card s99-red">
+    <button class="s99-row" onclick="s99Open('danger')"><span class="s99-ic" style="color:#FF453A;background:#2A1214"><svg viewBox="0 0 24 24" class="s99-svg"><path d="M4 7h16M10 11v6M14 11v6M5.5 7l1 13h11l1-13M9 7V4h6v3"/></svg></span><span class="s99-tx"><b style="color:#FF453A">Clear data</b></span><span class="s99-chev">›</span></button>
+  </div>
+<div class="s99-page" id="s99p-style"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>App style</b></div><div class="s99-body">
   <div class="st-block" style="padding:8px">
     <div class="style-pick">
       <button id="stl-brown" onclick="setStyle('brown')"><span class="sw" style="background:linear-gradient(135deg,#27201C,#F9D7C7)"></span>1 Brown</button>
@@ -985,13 +995,17 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
     </div>
   </div>
 
-  <div class="sec">TRAINING SCHEDULE</div>
+
+</div></div>
+<div class="s99-page" id="s99p-sched"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Training schedule</b></div><div class="s99-body">
   <div class="edit-block">
     <div class="edit-block-hdr"><h3>Weekly Plan</h3></div>
     <div class="edit-block-body" id="schedRows"></div>
   </div>
 
-  <div class="sec">MARKET LIST</div>
+
+</div></div>
+<div class="s99-page" id="s99p-market"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Market list</b></div><div class="s99-body">
   <div class="edit-block"><div class="edit-block-body">    <div class="fb-budget-row s98-budget">
       <span class="fb-budget-lbl">Monthly Budget</span>
       <div class="fb-budget-edit">
@@ -1022,7 +1036,9 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
   </div>
 
 
-  <div class="sec">MEALS</div>
+
+</div></div>
+<div class="s99-page" id="s99p-meals"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Meals</b></div><div class="s99-body">
   <div id="s98Meals"></div>
   <div class="sec">ADD A MEAL</div>
     <div class="edit-block">
@@ -1037,23 +1053,16 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
       </div>
     </div>
 
-  <div class="sec">BACKUP & RESTORE</div>
-  <div class="st-block">
-    <button class="st-btn success" onclick="dlBackup()"><span>📥</span> Download Backup</button>
-  </div>
-  <div class="st-block">
-    <button class="st-btn success" onclick="document.getElementById('rFile').click()"><span>📤</span> Restore from Backup</button>
-    <input type="file" id="rFile" accept=".json" style="display:none" onchange="restoreB(event)">
-  </div>
 
-  <div class="sec">DANGER ZONE</div>
+</div></div>
+<div class="s99-page" id="s99p-danger"><div class="s99-top"><button class="s99-back" onclick="s99Close()">‹</button><b>Clear data</b></div><div class="s99-body">
   <div class="st-block">
     <button class="st-btn danger" onclick="clearToday()"><span>🗑️</span> Clear Today's Data</button>
   </div>
   <div class="st-block">
     <button class="st-btn danger" onclick="clearAll()"><span>⚠️</span> Clear ALL Data</button>
   </div>
-
+</div></div>
 </div>
 
 <!-- NAV -->
@@ -2098,6 +2107,78 @@ window.s98SaveM=function(id){var m=D.meals.find(function(i){return i.id===id;});
 var rf=window.renderFood;window.renderFood=function(){var r=rf.apply(this,arguments);try{food();}catch(e){}return r;};
 var rm=window.renderMeals;window.renderMeals=function(){var r=rm.apply(this,arguments);try{meals();}catch(e){}return r;};
 try{food();meals();}catch(e){}
+})();
+</script>
+<!-- v9.9 (Philip, 9 Nov 2026): Settings grouped like Finance Hub: Backup card, one folder list, each folder opens its own page. -->
+<style id="v99">
+.s99-card{background:var(--card,#0C0C0E);border:1px solid var(--border,#1E1E22);border-radius:22px;margin:14px 16px 0;overflow:hidden}
+.s99-backup{padding:16px}
+.s99-bh{display:flex;align-items:center;gap:14px}
+.s99-ic{width:46px;height:46px;border-radius:50%;background:#1C1C1F;display:grid;place-items:center;flex:none}
+.s99-svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.s99-tx{flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;gap:2px}
+.s99-tx b{font-size:17px;font-weight:800;color:var(--text,#fff)}
+.s99-tx small{font-size:13px;color:var(--muted,#8E8E96);font-weight:500}
+.s99-bb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.s99-bb button{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:14px;border:1px solid var(--border,#1E1E22);background:#1A1A1D;color:var(--text,#fff);font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.s99-bb .s99-svg{width:18px;height:18px}
+.s99-row{display:flex;align-items:center;gap:14px;width:100%;padding:14px 16px;background:none;border:none;border-top:1px solid var(--border,#1E1E22);font:inherit;cursor:pointer;color:inherit}
+.s99-row:first-child{border-top:none}
+.s99-chev{font-size:24px;color:var(--muted,#8E8E96);line-height:1}
+.s99-red{border-color:#5A1F24;background:#140A0B}
+.s99-page{display:none;position:fixed;inset:0;z-index:500;background:var(--bg,#000);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:40px}
+.s99-page.on{display:block}
+.s99-top{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:10px;padding:14px 12px;background:var(--bg,#000);border-bottom:1px solid var(--border,#1E1E22)}
+.s99-top b{font-size:19px;font-weight:800}
+.s99-back{width:40px;height:40px;border-radius:50%;border:1px solid var(--border,#1E1E22);background:#1A1A1D;color:var(--text,#fff);font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center;padding-bottom:3px}
+.s99-body{padding-top:6px}
+.s99-body>.st-block,.s99-body>.edit-block,.s99-body>#s98Food,.s99-body>#s98Meals,.s99-body>.sec{margin-left:16px;margin-right:16px}
+</style>
+<script id="v99-js">
+(function(){
+var NM={brown:'1 Brown',deep:'2 Deep Brown',coach:'3 Coach',gym:'4 openGym'};
+function sub(){try{
+  var st='gym';try{st=localStorage.getItem('philip_fit_style')||'gym';}catch(e){}
+  var set=function(id,t){var e=document.getElementById(id);if(e)e.textContent=t;};
+  set('s99sStyle',NM[st]||'');
+  set('s99sSched','7 days');
+  if(typeof D!=='undefined'){var tot=0;(D.food||[]).forEach(function(x){tot+=Number(x.price)||0;});
+    set('s99sMarket',(D.food||[]).length+' items · GHS '+tot.toLocaleString());
+    set('s99sMeals',(D.meals||[]).length+' meals');}
+  var last='';try{last=localStorage.getItem('philip_fit_lastbk')||'';}catch(e){}
+  set('s99BkSub',last?'Last download '+last:'Never downloaded');
+}catch(e){}}
+window.s99Open=function(k){var p=document.getElementById('s99p-'+k);if(!p)return;p.classList.add('on');p.scrollTop=0;document.body.style.overflow='hidden';};
+window.s99Close=function(){document.querySelectorAll('.s99-page.on').forEach(function(p){p.classList.remove('on');});document.body.style.overflow='';sub();};
+var dl=window.dlBackup;if(typeof dl==='function')window.dlBackup=function(){var r=dl.apply(this,arguments);try{var d=new Date();localStorage.setItem('philip_fit_lastbk',d.toLocaleDateString('en-GB',{day:'numeric',month:'short'}));}catch(e){}sub();return r;};
+var o=window.sw;if(typeof o==='function')window.sw=function(){s99Close();var r=o.apply(this,arguments);sub();return r;};
+var ss=window.setStyle;if(typeof ss==='function')window.setStyle=function(){var r=ss.apply(this,arguments);sub();return r;};
+var rf=window.renderFood;if(typeof rf==='function')window.renderFood=function(){var r=rf.apply(this,arguments);sub();return r;};
+var rm=window.renderMeals;if(typeof rm==='function')window.renderMeals=function(){var r=rm.apply(this,arguments);sub();return r;};
+sub();
+})();
+</script>
+<style id="v99-money">
+html body .food-budget-card .fb-row{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px!important}
+html body .food-budget-card .fb-stat{display:flex!important;flex-direction:column-reverse;align-items:flex-start;justify-content:flex-end;gap:6px;background:#141416!important;border:1px solid #2A2A2E!important;border-radius:16px!important;padding:11px 13px!important;text-align:left!important;min-width:0}
+html body .food-budget-card .fb-lbl{font-size:11px!important;font-weight:700!important;letter-spacing:1.3px!important;text-transform:uppercase!important;color:#D1D1D6!important;margin:0!important}
+html body .food-budget-card .fb-num{font-size:23px!important;font-weight:800!important;line-height:1.05!important;margin:0!important;letter-spacing:-.4px!important}
+html body .food-budget-card #fbBought{color:#22C55E!important}
+html body .food-budget-card #fbLeft{color:#FF453A!important}
+html body .food-budget-card #fbTotal{color:#FFFFFF!important}
+html body .food-budget-card .fb-stat:has(#fbBought){order:1}
+html body .food-budget-card .fb-stat:has(#fbLeft){order:2}
+html body .food-budget-card .fb-stat:has(#fbTotal){order:3}
+#foodCats .food-price,.s98-amt,.food-cat-sub{font-variant-numeric:tabular-nums}
+.food-check .fx-ic,.meal-log-btn .fx-ic{color:#fff!important;stroke-width:2.6}
+</style>
+<script id="v99-money-js">
+(function(){
+function fix(){['fbTotal','fbBought','fbLeft'].forEach(function(id){var e=document.getElementById(id);if(!e)return;var n=Number(String(e.textContent).replace(/[^0-9.-]/g,''))||0;var t=n.toLocaleString();if(e.textContent!==t)e.textContent=t;});
+  var L={fbBought:'Bought',fbLeft:'Left',fbTotal:'Total'};Object.keys(L).forEach(function(id){var e=document.getElementById(id);var l=e&&e.parentElement.querySelector('.fb-lbl');if(l&&l.textContent!==L[id])l.textContent=L[id];});
+  document.querySelectorAll('#foodCats .food-price,.food-cat-sub,.s98-amt').forEach(function(e){var m=/^GHS\s*(-?\d+)$/.exec(e.textContent.trim());if(m){var t='GHS '+Number(m[1]).toLocaleString();if(e.textContent!==t)e.textContent=t;}});}
+var rf=window.renderFood;if(typeof rf==='function')window.renderFood=function(){var r=rf.apply(this,arguments);try{fix();}catch(e){}return r;};
+fix();
 })();
 </script>
 </body>
