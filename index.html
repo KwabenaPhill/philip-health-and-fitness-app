@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Philip Health And Fitness v9.7 💪</title>
+<title>Philip Health And Fitness v9.8 💪</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#000000">
 <meta name="mobile-web-app-capable" content="yes">
@@ -774,7 +774,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-eyebrow">PHILIP'S</div>
-  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.7</span></div>
+  <div class="hdr-title">Health &amp; Fitness <span class="hdr-ver">v9.8</span></div>
   <div class="hdr-pill">
     <span class="hp-item"><span class="hp-ic">📅</span><b id="hdrDate">—</b></span>
     <span class="hp-sep"></span>
@@ -936,16 +936,9 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
 
   <div class="food-budget-card">
     <div class="fb-row">
-      <div class="fb-stat"><div class="fb-num" id="fbTotal">₵0</div><div class="fb-lbl">List Total</div></div>
-      <div class="fb-stat"><div class="fb-num" id="fbBought" style="color:var(--green)">₵0</div><div class="fb-lbl">Bought</div></div>
-      <div class="fb-stat"><div class="fb-num" id="fbLeft" style="color:var(--accent)">₵0</div><div class="fb-lbl">Still to Buy</div></div>
-    </div>
-    <div class="fb-budget-row">
-      <span class="fb-budget-lbl">Monthly Budget</span>
-      <div class="fb-budget-edit">
-        <span class="fb-cur">₵</span>
-        <input class="fb-budget-inp" id="fbBudgetInp" type="number" inputmode="numeric" placeholder="1000" onchange="setBudget(this.value)">
-      </div>
+      <div class="fb-stat"><div class="fb-num" id="fbTotal">GHS 0</div><div class="fb-lbl">List Total</div></div>
+      <div class="fb-stat"><div class="fb-num" id="fbBought" style="color:var(--green)">GHS 0</div><div class="fb-lbl">Bought</div></div>
+      <div class="fb-stat"><div class="fb-num" id="fbLeft" style="color:var(--accent)">GHS 0</div><div class="fb-lbl">Still to Buy</div></div>
     </div>
     <div class="fb-bar"><div class="fb-bar-fill" id="fbBarFill"></div></div>
     <div class="fb-note" id="fbNote"></div>
@@ -960,27 +953,7 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
       <button class="copy-btn go" onclick="copyShoppingList()">📋 Copy All</button>
     </div>
     <textarea class="copy-prev" id="clPreview" readonly style="display:none"></textarea>
-    <div class="copy-hint" id="clHint">Preview it first, then copy the list.</div>
-  </div>
-
-  <div class="sec">ADD ITEM</div>
-  <div class="edit-block">
-    <div class="edit-block-body food-add">
-      <input class="add-inp" id="fNameInp" placeholder="Item name (e.g. Smoked fish)">
-      <div class="food-add-row2">
-        <input class="add-inp" id="fQtyInp" placeholder="Qty (2 tins)">
-        <input class="add-inp" id="fPriceInp" type="number" inputmode="numeric" placeholder="₵ price">
-      </div>
-      <select class="add-inp fa-cat" id="fCatInp">
-        <option value="Proteins">Proteins</option>
-        <option value="Carbs">Carbs</option>
-        <option value="Vegetables">Vegetables</option>
-        <option value="Fruits">Fruits</option>
-        <option value="Drinks">Drinks</option>
-        <option value="Other">Other</option>
-      </select>
-      <button class="add-btn food-add-btn" onclick="addFood()">＋ Add to List</button>
-    </div>
+    <div class="copy-hint" id="clHint"></div>
   </div>
 
   <div class="sec">END OF MONTH</div>
@@ -996,18 +969,6 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
   <div id="foodMeals" style="display:none">
     <div id="mealGroups"></div>
 
-    <div class="sec">ADD A MEAL</div>
-    <div class="edit-block">
-      <div class="edit-block-body food-add">
-        <input class="add-inp" id="mNameInp" placeholder="Meal name (e.g. Grilled Fish)">
-        <select class="add-inp fa-cat" id="mGroupInp">
-          <option value="Morning">Morning</option>
-          <option value="Evening">Evening</option>
-        </select>
-        <textarea class="add-inp meal-steps-inp" id="mStepsInp" placeholder="How to cook it — one short step per line. No oil."></textarea>
-        <button class="add-btn food-add-btn" onclick="addMeal()">＋ Save Meal</button>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -1029,6 +990,52 @@ html[data-style="gym"] #tab-food .food-item.bought .food-name{color:#6E6E76!impo
     <div class="edit-block-hdr"><h3>Weekly Plan</h3></div>
     <div class="edit-block-body" id="schedRows"></div>
   </div>
+
+  <div class="sec">MARKET LIST</div>
+  <div class="edit-block"><div class="edit-block-body">    <div class="fb-budget-row s98-budget">
+      <span class="fb-budget-lbl">Monthly Budget</span>
+      <div class="fb-budget-edit">
+        <span class="fb-cur">GHS</span>
+        <input class="fb-budget-inp" id="fbBudgetInp" type="number" inputmode="numeric" placeholder="1000" onchange="setBudget(this.value)">
+      </div>
+    </div>
+</div></div>
+  <div id="s98Food"></div>
+  <div class="sec">ADD ITEM</div>
+  <div class="edit-block">
+    <div class="edit-block-body food-add">
+      <input class="add-inp" id="fNameInp" placeholder="Item name">
+      <div class="food-add-row2">
+        <input class="add-inp" id="fQtyInp" placeholder="Qty">
+        <input class="add-inp" id="fPriceInp" type="number" inputmode="numeric" placeholder="GHS price">
+      </div>
+      <select class="add-inp fa-cat" id="fCatInp">
+        <option value="Proteins">Proteins</option>
+        <option value="Carbs">Carbs</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Other">Other</option>
+      </select>
+      <button class="add-btn food-add-btn" onclick="addFood()">＋ Add to List</button>
+    </div>
+  </div>
+
+
+  <div class="sec">MEALS</div>
+  <div id="s98Meals"></div>
+  <div class="sec">ADD A MEAL</div>
+    <div class="edit-block">
+      <div class="edit-block-body food-add">
+        <input class="add-inp" id="mNameInp" placeholder="Meal name">
+        <select class="add-inp fa-cat" id="mGroupInp">
+          <option value="Morning">Morning</option>
+          <option value="Evening">Evening</option>
+        </select>
+        <textarea class="add-inp meal-steps-inp" id="mStepsInp" placeholder="Steps, one per line"></textarea>
+        <button class="add-btn food-add-btn" onclick="addMeal()">＋ Save Meal</button>
+      </div>
+    </div>
 
   <div class="sec">BACKUP & RESTORE</div>
   <div class="st-block">
@@ -1582,7 +1589,7 @@ function renderFood(){
     if(!items.length)return;
     let catTot=0;items.forEach(x=>catTot+=Number(x.price)||0);
     const hdr=document.createElement('div');hdr.className='food-cat-hdr';
-    hdr.innerHTML=`<span>${CAT_ICON[cat]||'🛒'} ${cat}</span><span class="food-cat-sub">₵${catTot}</span>`;
+    hdr.innerHTML=`<span>${CAT_ICON[cat]||'🛒'} ${cat}</span><span class="food-cat-sub">GHS ${catTot}</span>`;
     cont.appendChild(hdr);
     items.forEach(x=>{
       const p=Number(x.price)||0;total+=p;if(x.bought)bought+=p;
@@ -1590,7 +1597,7 @@ function renderFood(){
       if(editingFoodId===x.id){
         row.className='food-item-edit';
         row.innerHTML='<input class="add-inp" id="efName" value="'+esc(x.name)+'" placeholder="Name">'+
-          '<div class="food-add-row2"><input class="add-inp" id="efQty" value="'+esc(x.qty||'')+'" placeholder="Qty"><input class="add-inp" id="efPrice" type="number" inputmode="numeric" value="'+p+'" placeholder="₵"></div>'+
+          '<div class="food-add-row2"><input class="add-inp" id="efQty" value="'+esc(x.qty||'')+'" placeholder="Qty"><input class="add-inp" id="efPrice" type="number" inputmode="numeric" value="'+p+'" placeholder="GHS"></div>'+
           '<select class="add-inp fa-cat" id="efCat">'+CAT_ORDER.map(c=>'<option value="'+c+'"'+(x.cat===c?' selected':'')+'>'+c+'</option>').join('')+'</select>'+
           '<div class="meal-edit-btns"><button class="meal-save" onclick="saveFoodEdit(\''+x.id+'\')">Save</button><button class="meal-cancel" onclick="cancelFoodEdit()">Cancel</button></div>';
       }else{
@@ -1598,7 +1605,7 @@ function renderFood(){
         row.innerHTML='<div class="food-check" onclick="toggleFood(\''+x.id+'\')">'+(x.bought?'✓':'')+'</div>'+
           '<div class="food-info" onclick="toggleFood(\''+x.id+'\')"><div class="food-name">'+esc(x.name)+'</div>'+
           (x.qty?'<div class="food-qty">'+esc(x.qty)+'</div>':'')+'</div>'+
-          '<div class="food-price">₵'+p+'</div>'+
+          '<div class="food-price">GHS '+p+'</div>'+
           '<button class="food-edit" onclick="editFood(\''+x.id+'\')">✏️</button>'+
           '<button class="food-del" onclick="delFood(\''+x.id+'\')">🗑️</button>';
       }
@@ -1606,9 +1613,9 @@ function renderFood(){
     });
   });
   const budget=Number(D.foodBudget)||0;const left=total-bought;
-  document.getElementById('fbTotal').textContent='₵'+total;
-  document.getElementById('fbBought').textContent='₵'+bought;
-  document.getElementById('fbLeft').textContent='₵'+left;
+  document.getElementById('fbTotal').textContent='GHS '+total;
+  document.getElementById('fbBought').textContent='GHS '+bought;
+  document.getElementById('fbLeft').textContent='GHS '+left;
   const fbBoughtEl=document.getElementById('fbBought')?.parentElement;
   const fbLeftEl=document.getElementById('fbLeft')?.parentElement;
   if(fbBoughtEl)fbBoughtEl.className='fb-stat '+(bought>0?'food-status-green':'food-status-red');
@@ -1628,9 +1635,9 @@ function renderFood(){
   }
   const note=document.getElementById('fbNote');
   if(budget>0){
-    if(bought>budget){bar.classList.add('over');note.innerHTML='<span style="color:var(--status-red);font-weight:700">Over budget by ₵'+(bought-budget)+'</span> — trim a few items';}
-    else{bar.classList.remove('over');note.innerHTML='<span style="color:'+progColor(remainingPct)+';font-weight:700">₵'+(budget-bought)+' under your budget</span> 👍';}
-  }else{bar.classList.remove('over');note.textContent='Set your monthly budget above';}
+    if(bought>budget){bar.classList.add('over');note.innerHTML='<span style="color:var(--status-red);font-weight:700">Over budget by GHS '+(bought-budget)+'</span>';}
+    else{bar.classList.remove('over');note.innerHTML='';}
+  }else{bar.classList.remove('over');note.textContent='';}
   refreshListPreview();
   renderFoodHistory();
 }
@@ -1738,11 +1745,11 @@ function renderFoodHistory(){
     const card=document.createElement('div');card.className='fh-card';
     let inner='<div class="fh-head" onclick="toggleHist(\''+h.id+'\')">'+
       '<div><div class="fh-month">'+esc(h.label)+'</div><div class="fh-date">'+(h.itemCount||0)+' items · saved '+esc(h.date||'')+'</div></div>'+
-      '<div class="fh-right"><div class="fh-total">₵'+(Number(h.total)||0)+'</div><div class="fh-caret">'+(open?'▲':'▼')+'</div></div></div>';
+      '<div class="fh-right"><div class="fh-total">GHS '+(Number(h.total)||0)+'</div><div class="fh-caret">'+(open?'▲':'▼')+'</div></div></div>';
     if(open){
       inner+='<div class="fh-items">';
       (h.items||[]).forEach(it=>{
-        inner+='<div class="fh-item"><span>'+(it.bought?'✓ ':'')+esc(it.name)+(it.qty?' ('+esc(it.qty)+')':'')+'</span><span>₵'+(Number(it.price)||0)+'</span></div>';
+        inner+='<div class="fh-item"><span>'+(it.bought?'✓ ':'')+esc(it.name)+(it.qty?' ('+esc(it.qty)+')':'')+'</span><span>GHS '+(Number(it.price)||0)+'</span></div>';
       });
       inner+='<button class="fh-del" onclick="delFoodHistory(\''+h.id+'\')">🗑️ Delete this month</button></div>';
     }
@@ -1756,7 +1763,7 @@ function completeMonth(){
   const spent=D.food.filter(x=>x.bought).reduce((s,x)=>s+(Number(x.price)||0),0);
   const mNames=['January','February','March','April','May','June','July','August','September','October','November','December'];
   const now=new Date();const label=mNames[now.getMonth()]+' '+now.getFullYear();
-  if(!confirm('Complete '+label+'?\n\nThis saves ₵'+spent+' (what you ticked as bought) to your Spending History, then unticks everything for a fresh month. Your list stays the same.'))return;
+  if(!confirm('Complete '+label+'?\n\nThis saves GHS '+spent+' (what you ticked as bought) to your Spending History, then unticks everything for a fresh month. Your list stays the same.'))return;
   const items=D.food.map(x=>({name:x.name,qty:x.qty,price:Number(x.price)||0,cat:x.cat,bought:!!x.bought}));
   D.foodHistory.unshift({id:'h'+Date.now(),label:label,date:todayKey(),total:spent,itemCount:items.length,items:items});
   D.food.forEach(x=>x.bought=false);
@@ -1781,7 +1788,7 @@ function renderMeals(){
     const hdr=document.createElement('div');hdr.className='meal-group-hdr';hdr.textContent=(g==='Morning'?'🌅 ':'🌙 ')+g;
     cont.appendChild(hdr);
     const meals=D.meals.filter(m=>m.group===g);
-    if(!meals.length){const e=document.createElement('div');e.className='meal-empty';e.textContent='No meals yet — add one below.';cont.appendChild(e);return;}
+    if(!meals.length){const e=document.createElement('div');e.className='meal-empty';e.textContent='No meals yet.';cont.appendChild(e);return;}
     meals.forEach(m=>{
       const card=document.createElement('div');
       const planned=!!planHas(m), plannedEntry=planned?D.mealPlan.find(p=>p.mealId===m.id||((p.group===m.group)&&p.name.toLowerCase()===m.name.toLowerCase())):null;
@@ -1801,7 +1808,7 @@ function renderMeals(){
           inner+='<div class="meal-body">';
           const steps=(m.steps||'').split('\n').map(s=>s.trim()).filter(Boolean);
           if(steps.length){steps.forEach((s,i)=>{inner+='<div class="meal-step"><span class="meal-step-num">'+(i+1)+'.</span><span>'+esc(s)+'</span></div>';});}
-          else{inner+='<div class="meal-step"><span>No steps yet — tap Edit to add them.</span></div>';}
+          
           if(MEAL_ITEMS[m.id]&&MEAL_ITEMS[m.id].length){inner+='<button class="meal-shop-btn" onclick="mealToShopping(\''+m.id+'\')">🛒 Add items to Shopping</button>';}
           inner+='<div class="meal-actions"><button class="meal-edit-btn" onclick="editMeal(\''+m.id+'\')">✏️ Edit</button><button class="meal-del-btn" onclick="delMeal(\''+m.id+'\')">🗑️ Delete</button></div></div>';
         }
@@ -2041,6 +2048,56 @@ function top(){var ics=document.querySelectorAll('.hdr .hp-ic');['cal','fire','c
   e.innerHTML='<span style="width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:'+HB[i]+'"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:'+HC[i]+';stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block">'+S[k]+'</svg></span>';});}
 top();run();
 var q=0;if(window.MutationObserver)new MutationObserver(function(){if(q)return;q=1;requestAnimationFrame(function(){q=0;run();});}).observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- v9.8 (Philip, 9 Nov 2026): workout drawing back, top strip fits, GHS money, edit/delete/add moved to Settings. Visual only; saved data unchanged. -->
+<style id="v98">
+#wkCard .fx-hero{display:block!important}
+html .hdr .hdr-pill{gap:4px!important;padding:7px 6px!important;justify-content:space-between!important;overflow:hidden}
+html .hdr .hdr-pill .hp-item{gap:5px!important;font-size:12px!important;min-width:0}
+html .hdr .hdr-pill .hp-lbl{font-size:11px!important}
+html .hdr .hdr-pill .hp-sep{margin:0 1px}
+html .hdr .hp-ic>span{width:24px!important;height:24px!important}
+html .hdr .hp-ic svg{width:14px!important;height:14px!important}
+#foodCats .food-edit,#foodCats .food-del,#foodMeals .meal-actions,#fbNote:empty,#clHint:empty{display:none!important}
+#foodCats .food-price{font-size:20px!important;font-weight:800!important;font-family:inherit!important;margin-left:auto;padding-right:6px}
+.fb-num,.food-cat-sub,.fb-cur,.fb-budget-inp{font-family:inherit!important;letter-spacing:-.2px}
+html body .food-budget-card .fb-num{font-size:18px!important;white-space:nowrap!important;letter-spacing:-.3px!important}
+.s98-budget{margin:0!important;padding:4px 0!important}
+.s98-row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-top:1px solid var(--border)}
+.s98-row:first-child{border-top:none}
+.s98-name{flex:1;min-width:0;font-weight:700;font-size:14px}
+.s98-name small{display:block;font-weight:500;color:var(--muted);font-size:12px;margin-top:2px}
+.s98-amt{font-weight:800;font-size:14px;white-space:nowrap}
+.s98-b{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:var(--card2);display:grid;place-items:center;cursor:pointer;color:#16A34A;font-size:16px;flex:none}
+.s98-b.del{color:#FF453A;border-color:#5A1F24;background:#1A0E10}
+.s98-cat{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);padding:12px 14px 4px}
+.s98-edit{padding:12px 14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px}
+</style>
+<script id="v98-js">
+(function(){
+var eF=null,eM=null;
+function E(x){return String(x==null?'':x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function food(){var el=document.getElementById('s98Food');if(!el||typeof D==='undefined')return;var h='<div class="edit-block">';var any=0;
+  CAT_ORDER.forEach(function(cat){var items=cat==='Other'?D.food.filter(function(x){return CAT_ORDER.indexOf(x.cat)===-1||x.cat==='Other';}):D.food.filter(function(x){return x.cat===cat;});if(!items.length)return;any=1;
+    h+='<div class="s98-cat">'+cat+'</div>';
+    items.forEach(function(x){if(eF===x.id){h+='<div class="s98-edit"><input class="add-inp" id="s98fN" value="'+E(x.name)+'"><div class="food-add-row2"><input class="add-inp" id="s98fQ" value="'+E(x.qty)+'" placeholder="Qty"><input class="add-inp" id="s98fP" type="number" inputmode="numeric" value="'+(Number(x.price)||0)+'" placeholder="GHS"></div><select class="add-inp fa-cat" id="s98fC">'+CAT_ORDER.map(function(c){return '<option'+(x.cat===c?' selected':'')+'>'+c+'</option>';}).join('')+'</select><div class="meal-edit-btns"><button class="meal-save" onclick="s98SaveF(\''+x.id+'\')">Save</button><button class="meal-cancel" onclick="s98EditF(null)">Cancel</button></div></div>';}
+      else h+='<div class="s98-row"><div class="s98-name">'+E(x.name)+(x.qty?'<small>'+E(x.qty)+'</small>':'')+'</div><div class="s98-amt">GHS '+(Number(x.price)||0)+'</div><button class="s98-b" onclick="s98EditF(\''+x.id+'\')">✏️</button><button class="s98-b del" onclick="delFood(\''+x.id+'\')">🗑️</button></div>';});});
+  el.innerHTML=any?h+'</div>':'';}
+function meals(){var el=document.getElementById('s98Meals');if(!el||typeof D==='undefined')return;var h='<div class="edit-block">';var any=0;
+  MEAL_GROUPS.forEach(function(g){var ms=D.meals.filter(function(m){return m.group===g;});if(!ms.length)return;any=1;h+='<div class="s98-cat">'+g+'</div>';
+    ms.forEach(function(m){if(eM===m.id){h+='<div class="s98-edit"><input class="add-inp" id="s98mN" value="'+E(m.name)+'"><select class="add-inp fa-cat" id="s98mG">'+MEAL_GROUPS.map(function(c){return '<option'+(m.group===c?' selected':'')+'>'+c+'</option>';}).join('')+'</select><textarea class="add-inp meal-steps-inp" id="s98mS">'+E(m.steps)+'</textarea><div class="meal-edit-btns"><button class="meal-save" onclick="s98SaveM(\''+m.id+'\')">Save</button><button class="meal-cancel" onclick="s98EditM(null)">Cancel</button></div></div>';}
+      else h+='<div class="s98-row"><div class="s98-name">'+E(m.name)+'</div><button class="s98-b" onclick="s98EditM(\''+m.id+'\')">✏️</button><button class="s98-b del" onclick="delMeal(\''+m.id+'\')">🗑️</button></div>';});});
+  el.innerHTML=any?h+'</div>':'';}
+window.s98EditF=function(id){eF=id;food();};
+window.s98EditM=function(id){eM=id;meals();};
+window.s98SaveF=function(id){var x=D.food.find(function(i){return i.id===id;});if(!x)return;var n=document.getElementById('s98fN').value.trim();if(!n){showToast('Enter a name');return;}
+  x.name=n;x.qty=document.getElementById('s98fQ').value.trim();x.price=Number(document.getElementById('s98fP').value)||0;x.cat=document.getElementById('s98fC').value;eF=null;save();renderFood();showToast('Updated');};
+window.s98SaveM=function(id){var m=D.meals.find(function(i){return i.id===id;});if(!m)return;var n=document.getElementById('s98mN').value.trim();if(!n){showToast('Enter a meal name');return;}
+  m.name=n;m.group=document.getElementById('s98mG').value;m.steps=document.getElementById('s98mS').value.trim();eM=null;save();renderMeals();showToast('Updated');};
+var rf=window.renderFood;window.renderFood=function(){var r=rf.apply(this,arguments);try{food();}catch(e){}return r;};
+var rm=window.renderMeals;window.renderMeals=function(){var r=rm.apply(this,arguments);try{meals();}catch(e){}return r;};
+try{food();meals();}catch(e){}
 })();
 </script>
 </body>
